@@ -1,0 +1,65 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    div {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    strong {
+        color: hsla(224, 74%, 69%, 1);
+    }
+
+    header {
+        margin: 0.5rem auto;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        margin-right: 63%;
+        
+    }
+
+
+    .boxContainer {
+        display: inline-block;
+
+        border-left: 0.3rem green;
+        border-left-style: solid;
+
+    }
+
+    .containerModule {
+
+        margin: 1rem;
+        display: inline-block;
+        padding: 0.8rem;
+        width: 70%;
+        height: 70%;
+    }
+
+    footer {
+        font-size: 0.7rem;
+        align-items: center;
+        font-weight: 700;
+        margin: 1rem auto;
+        position: relative;
+        bottom: 0;
+        color: hsla(234, 100%, 7%, 1);
+    }
+
+
+}
+
+@media (min-width: 500px){
+
+}
