@@ -1,0 +1,42 @@
+:root {
+	--blue: #0045AD;
+	--blue-60: rgba(0, 69, 173, 0.6);
+	--blue-40: rgba(0, 69, 173, 0.4);
+	--black: #000000;
+	--black-70: rgba(0, 0, 0, 0.7);
+	--black-40: rgba(0, 0, 0, 0.4);
+	--white: #FFFFFF;
+	--white-70: rgba(255, 255, 255, 0.7);
+	--white-40: rgba(255, 255, 255, 0.4);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+
+	@media(max-width: 1080px) {
+		font-size: 93.75%;
+	}
+
+	@media(max-width: 720px) {
+		font-size: 87.5%;
+	}
+
+}
+
+body,
+input,
+textarea,
+button {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+button {
+	cursor: pointer;
+}
