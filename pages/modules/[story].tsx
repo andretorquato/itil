@@ -1,25 +1,36 @@
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import database from "../../database.json";
 
 const Story: NextPage = () => {
   const [currentStep, setCurrentStep] = useState("introduction");
+  const [module, setModule]: any | null = useState(null);
   const router = useRouter();
   const steps = ["introduction", "contextualization", "questions", "finish"];
   const { story } = router.query;
 
-	const changeStep = (step: string) => {
-		setCurrentStep(step);
-	}
-	const nextStep = () => {
-		const index = steps.indexOf(currentStep);
-		if(steps[index + 1] !== undefined && steps[index + 1] == "finish") {
-			router.push("/");
-		}
-		if (index < steps.length - 1) {
-			changeStep(steps[index + 1]);
-		}
-	}
+  useEffect(() => {
+    const newModule = database.modules.find((m) => m.slug === story);
+    setModule({ ...newModule });
+    console.log(module);
+  }, []);
+
+  const changeStep = (step: string) => {
+    setCurrentStep(step);
+  };
+  const nextStep = () => {
+    const index = steps.indexOf(currentStep);
+    const isFinishSteps =
+      steps[index + 1] !== undefined && steps[index + 1] == "finish";
+    if (isFinishSteps) {
+      router.push("/");
+    }
+    if (index < steps.length - 1) {
+      changeStep(steps[index + 1]);
+    }
+  };
   return (
     <>
       <div>
@@ -28,7 +39,7 @@ const Story: NextPage = () => {
             case "introduction":
               return (
                 <div>
-                  <h1>Introdução</h1>
+                  <h1>Introdução {module.name}</h1>
                   <button onClick={nextStep}>Ver contexto</button>
                 </div>
               );
@@ -36,6 +47,9 @@ const Story: NextPage = () => {
               return (
                 <div>
                   <h1>Contexto</h1>
+                  <div>
+                    {/* <p>{{ module.questions.}}</p> */}
+                  </div>
                   <button onClick={nextStep}>Responder questões</button>
                 </div>
               );

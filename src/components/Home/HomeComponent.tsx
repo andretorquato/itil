@@ -1,18 +1,27 @@
 import React from "react";
-
-import type { NextPage } from 'next'
-import styles from "./HomeComponent.module.scss";
 import { useRouter } from "next/router";
+import type { NextPage } from "next";
+
+import database from "../../../database.json";
+import styles from "./HomeComponent.module.scss";
 
 export const HomeComponent: NextPage = () => {
   const router = useRouter();
+  const modules = database.modules;
+
   return (
-		<div className={styles.container}>
-			<h1>Modulos</h1>
-      <button onClick={() => router.push("/modules/module-1")}>Modulo 1</button>
-      <button onClick={() => router.push("/modules/module-2")}>Modulo 2</button>
-      <button onClick={() => router.push("/modules/module-3")}>Modulo 3</button>
-      <button onClick={() => router.push("/modules/module-4")}>Modulo 4</button>
+    <div className={styles.container}>
+      <h1>Modulos</h1>
+      {modules.map((m) => {
+        return (
+          <div key={m.id}>
+            <h2>{m.name}</h2>
+            <button onClick={() => router.push(`/modules/${m.slug}`)}>
+              Iniciar Modulo
+            </button>
+          </div>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
