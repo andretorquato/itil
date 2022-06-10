@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 
+import styles from "../../styles/Story.module.scss";
+
 import database from "../../database.json";
 
 const Story: NextPage = () => {
@@ -33,13 +35,14 @@ const Story: NextPage = () => {
   };
   return (
     <>
-      <div>
+      <div className={styles.container}>
         {(() => {
           switch (currentStep) {
             case "introduction":
               return (
                 <div>
-                  <h1>Introdução {module.name}</h1>
+                  <h1>Introdução</h1>
+                  <p>{module?.name}</p>
                   <button onClick={nextStep}>Ver contexto</button>
                 </div>
               );
@@ -47,9 +50,7 @@ const Story: NextPage = () => {
               return (
                 <div>
                   <h1>Contexto</h1>
-                  <div>
-                    {/* <p>{{ module.questions.}}</p> */}
-                  </div>
+                  <div></div>
                   <button onClick={nextStep}>Responder questões</button>
                 </div>
               );
@@ -57,6 +58,20 @@ const Story: NextPage = () => {
               return (
                 <div>
                   <h1>Questões</h1>
+                  {module?.questions.map((q: any) => {
+                    return (
+                      <div key={q.question}>
+                        <p>
+                          <b>{q.question}</b>
+                        </p>
+                        <ul>
+                          {q.options.map((op: any) => {
+                            return <li key={op?.id}>{op?.ctx}</li>;
+                          })}
+                        </ul>
+                      </div>
+                    );
+                  })}
                   <button onClick={nextStep}>Finalizar</button>
                 </div>
               );
