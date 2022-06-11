@@ -1,0 +1,19 @@
+.option {
+	cursor: pointer;
+
+	&.active {
+		border: 1px solid green;
+	}
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.wrong-answer {
+	color: red;
+}
+
+.right-answer {
+	color: green;
+}

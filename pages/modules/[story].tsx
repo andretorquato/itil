@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import styles from "../../styles/Story.module.scss";
 
 import database from "../../database.json";
+import Questions from "../../src/components/Questions/Questions";
 
 const Story: NextPage = () => {
   const [currentStep, setCurrentStep] = useState("introduction");
@@ -16,7 +17,7 @@ const Story: NextPage = () => {
   useEffect(() => {
     const newModule = database.modules.find((m) => m.slug === story);
     setModule({ ...newModule });
-    console.log(module);
+    
   }, []);
 
   const changeStep = (step: string) => {
@@ -55,26 +56,7 @@ const Story: NextPage = () => {
                 </div>
               );
             case "questions":
-              return (
-                <div>
-                  <h1>Questões</h1>
-                  {module?.questions.map((q: any) => {
-                    return (
-                      <div key={q.question}>
-                        <p>
-                          <b>{q.question}</b>
-                        </p>
-                        <ul>
-                          {q.options.map((op: any) => {
-                            return <li key={op?.id}>{op?.ctx}</li>;
-                          })}
-                        </ul>
-                      </div>
-                    );
-                  })}
-                  <button onClick={nextStep}>Finalizar</button>
-                </div>
-              );
+              return <Questions module={module} next={nextStep} />;
             default:
               return <div>Voltar para tela inicial</div>;
           }

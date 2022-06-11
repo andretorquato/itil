@@ -6,7 +6,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Quiz Itil</title>
+        <title>Quiz ITIL</title>
+        <meta name="description" content="O que é ITIL? Vamos descobrir!" />
       </Head>
       <HomeComponent />
     </>

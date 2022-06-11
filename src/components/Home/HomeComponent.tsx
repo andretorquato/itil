@@ -2,6 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
 
+import Button from "@mui/material/Button";
+
 import database from "../../../database.json";
 import styles from "./HomeComponent.module.scss";
 
@@ -16,9 +18,12 @@ export const HomeComponent: NextPage = () => {
         return (
           <div key={m.id}>
             <h2>{m.name}</h2>
-            <button onClick={() => router.push(`/modules/${m.slug}`)}>
+            <Button
+              variant="contained"
+              onClick={() => router.push(`/modules/${m.slug}`)}
+            >
               Iniciar Modulo
-            </button>
+            </Button>
           </div>
         );
       })}
