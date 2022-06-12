@@ -5,11 +5,64 @@
 			"slug": "fundamentos-de-itil",
 			"name": "FUNDAMENTOS DE ITIL",
 			"icon": "",
-			"introduction": "",
-			"context": "",
+			"introduction": {
+				"html": "<p>A Information Technology Infrastructure Library, Ou Biblioteca de Infraestrutura de Tecnologia da Informação, Ou apenas ITIL, como ficou conhecido, É um famoso framework formado por uma coletânea de livros. Isso mesmo, livros! A ITIL, ao contrário do que muitos pensam, não é um software, uma ferramenta ou uma metodologia, é na verdade um conjunto das melhores práticas de gerenciamento de TI, separadas quatro (4) versões com abordagens e bibliotecas diferentes. Por exemplo, em sua primeira versão, desenvolvida na década de 1980, a ITIL era composta de aproximadamente 40 livros! Tá aí o motivo de ser chamado de biblioteca…Mas com o passar dos anos sofreu uma completa reformulação, tendo as práticas resumidas em alguns livros de acordo com sua abordagem. Atualmente é composto por quatro (4) versões  acompanhar os módulos vamos focar na ITIL v3,  publicada em 2007 e atualizada em 2011. Os livros dessa biblioteca fazem parte do ciclo de vida do serviço para a TI, compreendendo como o serviço nasce, se desenvolve, entra em operação e é descontinuado, se for o caso. </p>"
+			},
+			"context": {
+				"images": [
+					"/modules/fundamentals/comic-1.jpeg",
+					"/modules/fundamentals/comic-2.jpeg"
+				]
+			},
 			"questions": [
 				{
 					"id": 1,
+					"question": "O que é o ITIL?",
+					"options": [
+						{
+							"id": 1,
+							"ctx": "Uma metodologia"
+						},
+						{
+							"id": 2,
+							"ctx": "Uma Ferramenta"
+						},
+						{
+							"id": 3,
+							"ctx": "Um software"
+						},
+						{
+							"id": 4,
+							"ctx": "Conjunto de práticas de gerenciamento de TI"
+						}
+					],
+					"answer_id": 4
+				},
+				{
+					"id": 2,
+					"question": "Qual o significado da  sigla ITIL?",
+					"options": [
+						{
+							"id": 1,
+							"ctx": "Information Technology Infrastructure Library"
+						},
+						{
+							"id": 2,
+							"ctx": "Information TI  Library"
+						},
+						{
+							"id": 3,
+							"ctx": "Intelligent Technology Infrastructure Library"
+						},
+						{
+							"id": 4,
+							"ctx": "Intelligent Technology Inside Library"
+						}
+					],
+					"answer_id": 1
+				},
+				{
+					"id": 3,
 					"question": "Quais os livros que compõem a biblioteca da versão 3 da ITIL?",
 					"options": [
 						{
@@ -32,50 +85,53 @@
 					"answer_id": 4
 				},
 				{
-					"id": 2,
-					"question": "Questão 2",
+					"id": 4,
+					"question": "Após a leitura do cenário, terminamos o quadrinho com a seguinte pergunta: “O que você sugere que seja feito inicialmente?” Considere que você é o gestor de TI na situação, qual a sua resposta?",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "R1"
+							"ctx": "Analisar o contexto da empresa no presente, reavaliando o papel da governança, da estrutura de TI (Frameworks e modelos adotados), do alinhamento com os objetivos estratégicos e o funcionamento dos serviços."
 						},
 						{
 							"id": 2,
-							"ctx": "R2"
+							"ctx": "Selecionar e estudar possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos. "
 						},
 						{
 							"id": 3,
-							"ctx": "R3"
+							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico, a fim de manter o alinhamento entre os planos e permitir as devidas melhorias nos serviços prestados."
 						},
 						{
 							"id": 4,
-							"ctx": "R4"
+							"ctx": "Selecionar uma equipe única especializada na construção de novos modelos de serviços baseados na estrutura já empregada pela empresa, mesmo que isso ocupe muito tempo e não permita a participação de partes interessadas nas mudanças."
 						}
 					],
-					"answer_id": 4
+					"answer_id": 1,
+					"tag": [
+						"context"
+					]
 				},
 				{
-					"id": 3,
-					"question": "Questão 3",
+					"id": 5,
+					"question": "Em qual dos  livros que compõem a biblioteca da versão 3 da ITIL aborda as decisões estratégicas relacionadas aos serviços?",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "R1"
+							"ctx": "Estratégia para decisão"
 						},
 						{
 							"id": 2,
-							"ctx": "R2"
+							"ctx": "O poder da estratégia"
 						},
 						{
 							"id": 3,
-							"ctx": "R3"
+							"ctx": "Estratégia de Serviços"
 						},
 						{
 							"id": 4,
-							"ctx": "R4"
+							"ctx": "Serviços com estratégia"
 						}
 					],
-					"answer_id": 4
+					"answer_id": 3
 				}
 			]
 		},

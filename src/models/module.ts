@@ -1,4 +1,11 @@
 export interface ModuleProps {
+	name: string;
+	introduction: {
+		html: string;
+	};
+	context: {
+		images: Array<string>;
+	};
 	questions: Question[];
 
 }

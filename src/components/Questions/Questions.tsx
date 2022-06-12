@@ -21,8 +21,6 @@ const Questions: NextPage<QuestionProps> = ({ module, next }) => {
   const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(0);
   const [attemps, setAttemps] = useState<number>(0);
   const [totalListQuestions, setTotalListQuestions] = useState<number>(0);
-  const [updateWrongQuestions, setUpdateWrongQuestions] =
-    useState<boolean>(false);
 
   useEffect(() => {
     if (module && module.questions) {

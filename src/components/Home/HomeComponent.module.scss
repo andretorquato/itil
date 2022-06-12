@@ -4,4 +4,12 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	margin: auto;
+	max-width: 90vw;
+
+	.header {
+		display: flex;
+		margin: 0.5rem 0;
+		align-items: center;
+	}
 }
