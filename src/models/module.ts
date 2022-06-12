@@ -3,7 +3,6 @@ export interface ModuleProps {
 
 }
 
-
 export interface Question {
 	id: number;
 	answer_id: number;

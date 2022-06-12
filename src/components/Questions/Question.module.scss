@@ -1,5 +1,14 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 90vw;
+	height: 100%;
+}
+
 .option {
 	cursor: pointer;
+	margin: 0.5rem 0 !important;
 
 	&.active {
 		border: 1px solid green;

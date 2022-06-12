@@ -5,9 +5,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="stylesheet"
