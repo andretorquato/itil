@@ -10,16 +10,22 @@ import Questions from "../../src/components/Questions/Questions";
 const Story: NextPage = () => {
   const [currentStep, setCurrentStep] = useState("introduction");
   const [module, setModule]: any | null = useState(null);
+  const [moduleSlug, setModuleSlug] = useState("");
   const router = useRouter();
   const steps = ["introduction", "contextualization", "questions", "finish"];
   const { story } = router.query;
 
   useEffect(() => {
-    const newModule = database.modules.find((m) => m.slug === story);
+    const newModule = database.modules.find((m) => m.slug === moduleSlug);
     setModule({ ...newModule });
     
-  }, []);
+  }, [moduleSlug]);
 
+  useEffect(() => {
+    if (story) {
+      setModuleSlug(story as string);
+    }
+  }, [story]);
   const changeStep = (step: string) => {
     setCurrentStep(step);
   };
