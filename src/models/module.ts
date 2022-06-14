@@ -1,5 +1,7 @@
 export interface ModuleProps {
+	id: number;
 	name: string;
+	slug: string;
 	introduction: {
 		html: string;
 	};

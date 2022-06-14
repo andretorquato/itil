@@ -4,13 +4,21 @@ import { Button } from "@mui/material";
 
 import { ModuleProps, Question } from "../../../src/models/module";
 import styles from "./Question.module.scss";
+import Score from "../Score/Score";
 
 interface QuestionProps {
   module: ModuleProps;
   next: () => void;
+  score: number;
+  updateScore: () => void;
 }
 
-const Questions: NextPage<QuestionProps> = ({ module, next }) => {
+const Questions: NextPage<QuestionProps> = ({
+  module,
+  score,
+  next,
+  updateScore,
+}) => {
   const [selectedAnswerID, setSelectedAnswerID] = useState<number | null>(null);
   const [activeQuestion, setActiveQuestion] = useState<Question | null>(null);
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
@@ -19,7 +27,6 @@ const Questions: NextPage<QuestionProps> = ({ module, next }) => {
   const [isWrongAnswer, setIsWrongAnswer] = useState<boolean>(false);
   const [showActions, setShowActions] = useState<boolean>(true);
   const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(0);
-  const [attemps, setAttemps] = useState<number>(0);
   const [totalListQuestions, setTotalListQuestions] = useState<number>(0);
 
   useEffect(() => {
@@ -50,6 +57,7 @@ const Questions: NextPage<QuestionProps> = ({ module, next }) => {
     if (!selectedAnswerID) return;
     const isWrongAnswer = selectedAnswerID != activeQuestion?.answer_id;
     if (isWrongAnswer) setIsWrongAnswer(isWrongAnswer);
+    if(!isWrongAnswer) updateScore();
     setShowActions(false);
   };
 
@@ -68,7 +76,6 @@ const Questions: NextPage<QuestionProps> = ({ module, next }) => {
         wrongQuestions.length == 0 && next();
       }
     }
-    setAttemps(attemps + 1);
     setShowActions(true);
   };
 
@@ -97,9 +104,10 @@ const Questions: NextPage<QuestionProps> = ({ module, next }) => {
 
   return (
     <div className={styles.container}>
+      <Score score={score} />
       <h1>Questões</h1>
       <div>
-        {indexActiveQuestion}/{totalListQuestions} - Tentativas: {attemps}
+        {indexActiveQuestion}/{totalListQuestions}
       </div>
       {activeQuestion && (
         <div>
