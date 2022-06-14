@@ -15,6 +15,7 @@ export interface ModuleProps {
 export interface Question {
 	id: number;
 	answer_id: number;
+	answered?: boolean;
 	options: Array<{
 		id: number;
 		ctx: string;

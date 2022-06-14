@@ -10,7 +10,7 @@ interface QuestionProps {
   module: ModuleProps;
   next: () => void;
   score: number;
-  updateScore: () => void;
+  updateScore: (q: Question) => void;
 }
 
 const Questions: NextPage<QuestionProps> = ({
@@ -21,28 +21,14 @@ const Questions: NextPage<QuestionProps> = ({
 }) => {
   const [selectedAnswerID, setSelectedAnswerID] = useState<number | null>(null);
   const [activeQuestion, setActiveQuestion] = useState<Question | null>(null);
-  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
-  const [listQuestions, setListQuestions] = useState<Question[]>([]);
-  const [wrongQuestions, setWrongQuestions] = useState<Question[]>([]);
   const [isWrongAnswer, setIsWrongAnswer] = useState<boolean>(false);
   const [showActions, setShowActions] = useState<boolean>(true);
   const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(0);
-  const [totalListQuestions, setTotalListQuestions] = useState<number>(0);
 
   useEffect(() => {
-    if (module && module.questions) {
-      const questions = module?.questions ? module.questions : [];
-      setAllQuestions(questions);
-      setListQuestions(questions);
-    }
-  }, [module]);
-
-  useEffect(() => {
-    const totalListQuestions = listQuestions.length;
-    setTotalListQuestions(totalListQuestions);
-    setActiveQuestion(listQuestions[0]);
+    setActiveQuestion(module.questions[indexActiveQuestion]);
     setIndexActiveQuestion(1);
-  }, [listQuestions]);
+  }, []);
 
   const optionClass = (optionId: number) => {
     const classes = styles.option;
@@ -51,47 +37,22 @@ const Questions: NextPage<QuestionProps> = ({
       : classes;
   };
 
-  const setAnswer = (answer: number) => setSelectedAnswerID(answer);
-
   const answer = () => {
     if (!selectedAnswerID) return;
     const isWrongAnswer = selectedAnswerID != activeQuestion?.answer_id;
     if (isWrongAnswer) setIsWrongAnswer(isWrongAnswer);
-    if(!isWrongAnswer) updateScore();
+    if (!isWrongAnswer) updateScore(activeQuestion);
     setShowActions(false);
   };
 
   const nextQuestion = () => {
-    if (isWrongAnswer) setWrongQuestion();
-
-    if (indexActiveQuestion < totalListQuestions) {
-      updateActiveQuestion();
-    } else {
-      if (wrongQuestions.length > 0) {
-        const newQuestions = wrongQuestions;
-        setListQuestions([...newQuestions]);
-        updateActiveQuestion();
-        setWrongQuestions([]);
-      } else {
-        wrongQuestions.length == 0 && next();
-      }
+    if (indexActiveQuestion < module.questions.length) {
+      setActiveQuestion(module.questions[indexActiveQuestion]);
+      setIndexActiveQuestion(indexActiveQuestion + 1);
+      setSelectedAnswerID(null);
     }
+    indexActiveQuestion == module.questions.length && next();
     setShowActions(true);
-  };
-
-  const updateActiveQuestion = () => {
-    setActiveQuestion(listQuestions[indexActiveQuestion]);
-    setIndexActiveQuestion(indexActiveQuestion + 1);
-    setSelectedAnswerID(null);
-  };
-
-  const setWrongQuestion = () => {
-    const questionHasAdded = wrongQuestions.find(
-      (question) => question.id == activeQuestion?.id
-    );
-    if (!questionHasAdded && activeQuestion) {
-      setWrongQuestions([...wrongQuestions, activeQuestion]);
-    }
     setIsWrongAnswer(false);
   };
 
@@ -107,7 +68,7 @@ const Questions: NextPage<QuestionProps> = ({
       <Score score={score} />
       <h1>Questões</h1>
       <div>
-        {indexActiveQuestion}/{totalListQuestions}
+        {indexActiveQuestion}/{module.questions.length}
       </div>
       {activeQuestion && (
         <div>
@@ -118,7 +79,7 @@ const Questions: NextPage<QuestionProps> = ({
               return (
                 <li
                   className={optionClass(op.id)}
-                  onClick={() => setAnswer(op?.id)}
+                  onClick={() => setSelectedAnswerID(op?.id)}
                   key={op?.id}
                 >
                   {op?.ctx}

@@ -14,6 +14,7 @@ import {
   getProgress,
   saveProgress,
 } from "../../src/controllers/quiz-controller";
+import { Question } from "../../src/models/module";
 
 const steps = ["introduction", "contextualization", "questions", "finish"];
 
@@ -26,8 +27,17 @@ const Story: NextPage = () => {
   const { story } = router.query;
 
   useEffect(() => {
-    const newModule = database.modules.find((m) => m.slug === moduleSlug);
     const data = getProgress();
+    let newModule = database.modules.find((m) => m.slug === moduleSlug);
+    if(newModule) {
+      const completedModule = data?.completedModules.find((cm: any) => cm.id === newModule?.id);
+      newModule.questions = newModule.questions.map((q: any) => {
+        return {
+          ...q,
+          answered: completedModule?.questions?.find((cq: any) => cq.id === q.id)?.answered || false,
+        };
+      });
+    };
     data && setScore(data?.score || 0);
     setModule({ ...newModule });
   }, [moduleSlug]);
@@ -53,8 +63,13 @@ const Story: NextPage = () => {
     }
   };
 
-  const updateScore = () => {
-    setScore(score + config["default_xp"]);
+  const updateScore = (activeQ: Question) => {
+    const question = module.questions.find((q: any) => q.id === activeQ.id);
+    if (question && !question.answered) {
+      setScore(score + config["default_xp"]);
+      question.answered = true;
+    }
+    console.log(module);
   };
 
   return (
