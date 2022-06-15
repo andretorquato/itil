@@ -17,6 +17,7 @@ const Progress: NextPage<ProgressProps> = ({ activeIndex, total }) => {
   return (
     <div className={styles.progress}>
       <div
+			className={styles.progressBar}
         style={{
           width: width,
           height: 6,

@@ -27,8 +27,8 @@ const Questions: NextPage<QuestionProps> = ({
   const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(1);
 
   useEffect(() => {
-    setActiveQuestion(module.questions[indexActiveQuestion]);  
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    setActiveQuestion(module.questions[indexActiveQuestion]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const optionClass = (optionId: number) => {
@@ -81,8 +81,8 @@ const Questions: NextPage<QuestionProps> = ({
       {activeQuestion && (
         <div>
           <h2>{activeQuestion.question}</h2>
-
-          <ul>
+          <span>+2 pontos</span>
+          <ul className={styles.options}>
             {activeQuestion.options.map((op: any) => {
               return (
                 <li
@@ -90,7 +90,7 @@ const Questions: NextPage<QuestionProps> = ({
                   onClick={() => setSelectedAnswerID(op?.id)}
                   key={op?.id}
                 >
-                  {op?.ctx}
+                  <span>{op?.ctx}</span>
                 </li>
               );
             })}
