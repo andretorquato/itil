@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 
+import Progress from "../Progress/Progress";
 import { ModuleProps, Question } from "../../../src/models/module";
 import styles from "./Question.module.scss";
 import Score from "../Score/Score";
@@ -23,11 +24,11 @@ const Questions: NextPage<QuestionProps> = ({
   const [activeQuestion, setActiveQuestion] = useState<Question | null>(null);
   const [isWrongAnswer, setIsWrongAnswer] = useState<boolean>(false);
   const [showActions, setShowActions] = useState<boolean>(true);
-  const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(0);
+  const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(1);
 
   useEffect(() => {
-    setActiveQuestion(module.questions[indexActiveQuestion]);
-    setIndexActiveQuestion(1);
+    setActiveQuestion(module.questions[indexActiveQuestion]);  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const optionClass = (optionId: number) => {
@@ -66,10 +67,17 @@ const Questions: NextPage<QuestionProps> = ({
   return (
     <div className={styles.container}>
       <Score score={score} />
-      <h1>Questões</h1>
-      <div>
-        {indexActiveQuestion}/{module.questions.length}
-      </div>
+      <nav>
+        <div>
+          {indexActiveQuestion}/{module.questions.length} questões respondidas
+        </div>
+        <div>
+          <Progress
+            activeIndex={indexActiveQuestion}
+            total={module.questions.length}
+          />
+        </div>
+      </nav>
       {activeQuestion && (
         <div>
           <h2>{activeQuestion.question}</h2>
