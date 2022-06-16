@@ -2,4 +2,27 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	max-width: var(--screen-max-size);
+	margin: auto;
+	padding: 1rem 0;
+
+	h2, h3 {
+		text-align: center;
+	}
+	
+	ul {
+		padding: 4px 8%;
+	}
+
+	strong {
+		color: var(--primary);
+	}
+
+	@media screen and (max-width: 768px) {
+		max-width: 90vw;
+	}
+}
+
+.content {
+	margin: 1rem 0;
 }

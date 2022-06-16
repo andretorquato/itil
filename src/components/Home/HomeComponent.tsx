@@ -3,16 +3,20 @@ import { useRouter } from "next/router";
 import type { NextPage } from "next";
 
 import Button from "@mui/material/Button";
+import Icon from "@mui/material/Icon";
 
 import database from "../../../database.json";
 
 import styles from "./HomeComponent.module.scss";
 import Score from "../Score/Score";
 import { getProgress } from "../../controllers/quiz-controller";
+import ModuleDialog from "../ModuleDialog/ModuleDialog";
 
 export const HomeComponent: NextPage = () => {
   const [modules, setModules] = useState<any[]>([]);
+  const [activeModule, setActiveModule] = useState<any>();
   const [score, setScore] = useState(0);
+  const [openDialog, setOpenDialog] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -29,26 +33,57 @@ export const HomeComponent: NextPage = () => {
     setModules([...newModules]);
   }, []);
 
+  const moduleClass = (completed: boolean) => {
+    return completed
+      ? `${styles.boxModule} ${styles.completed}`
+      : styles.boxModule;
+  };
+
+  const handleOpenDialog = (module: any) => {
+    setActiveModule(module);
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setActiveModule(null);
+    setOpenDialog(false);
+  };
+
+  const handleStartModule = () => {
+    handleCloseDialog();
+    router.push(`/modules/${activeModule.slug}`);
+  };
+
   return (
     <div className={styles.container}>
       <Score score={score} />
       <h1>Modulos</h1>
-      {modules.map((m) => {
-        return (
-          <div key={m.id}>
-            <div className={styles.header}>
-              <h2>{m.name}</h2> {m.completed && <i>Completo</i>}
+      <div className={styles.modulesContainer}>
+        {modules.map((m) => {
+          return (
+            <div key={m.id}>
+              <div
+                onClick={() => handleOpenDialog(m)}
+                className={moduleClass(m.completed)}
+              >
+                <div className={styles.icon}>
+                  <Icon>{m.icon}</Icon>
+                </div>
+                <div className={styles.description}>
+                  <p>{m.name}</p>
+                  <span>{m.description}</span>
+                </div>
+              </div>
             </div>
-
-            <Button
-              variant="contained"
-              onClick={() => router.push(`/modules/${m.slug}`)}
-            >
-              Iniciar Modulo
-            </Button>
-          </div>
-        );
-      })}
+          );
+        })}
+        <ModuleDialog
+          open={openDialog}
+          title={`${activeModule?.name} - ${activeModule?.description}`}
+          handleClose={handleCloseDialog}
+          handleStart={handleStartModule}
+        />
+      </div>
     </div>
   );
 };

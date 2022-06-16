@@ -24,10 +24,11 @@ const Questions: NextPage<QuestionProps> = ({
   const [activeQuestion, setActiveQuestion] = useState<Question | null>(null);
   const [isWrongAnswer, setIsWrongAnswer] = useState<boolean>(false);
   const [showActions, setShowActions] = useState<boolean>(true);
-  const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(1);
+  const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(0);
 
   useEffect(() => {
     setActiveQuestion(module.questions[indexActiveQuestion]);
+    setIndexActiveQuestion(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -5,11 +5,60 @@
 	justify-content: center;
 	text-align: center;
 	margin: auto;
+	padding: 1rem 0;
 	max-width: 90vw;
+}
 
-	.header {
+.boxModule {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+	padding: 0.5rem 6rem 0.5rem 0;
+	border-radius: 8px;
+	margin-bottom: 0.75rem;
+
+	.icon {
+		color: var(--primary);
+		padding: 1rem;
+		span {
+			font-size:2.5rem;
+		
+		}
+		
+	}
+
+	.description {
 		display: flex;
-		margin: 0.5rem 0;
-		align-items: center;
+		align-items: flex-start;
+		flex-direction: column;
+		height: 2.5rem;
+		p {
+			font-weight: 600;
+		}
+	}
+
+	&:active,
+	&:hover {
+		opacity: 0.7;
+		background: var(--primary-30);
+	}
+
+	&.completed {
+		box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+		background-color: rgba(229, 229, 229, 0.5);
+		border: 1px solid #F8A20190;
+
+		.description p,
+		.icon span {
+			color: #F8A201;
+		} 
+	
+		&:hover,
+		&:active {
+			opacity: 0.9;
+			background:rgba(229, 229, 229, 0.5);
+		}
 	}
 }

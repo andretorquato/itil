@@ -14,8 +14,8 @@ const Introduction: NextPage<IntroductionProps> = ({ module, next }) => {
   return (
     <>
       <div className={styles.container}>
-        <h1>{module?.name}</h1>
         <div
+        className={styles.content}
           dangerouslySetInnerHTML={{ __html: module?.introduction?.html }}
         ></div>
         <Button variant="contained" onClick={next}>
