@@ -41,10 +41,10 @@ export default function ModuleDialog({
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
+          <Button autoFocus variant="text" onClick={handleClose}>
             Cancelar
           </Button>
-          <Button onClick={handleStart} autoFocus>
+          <Button onClick={handleStart} variant="contained" autoFocus>
             Iniciar
           </Button>
         </DialogActions>

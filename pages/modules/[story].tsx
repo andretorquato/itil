@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 import styles from "../../styles/Story.module.scss";
 
@@ -69,11 +70,13 @@ const Story: NextPage = () => {
       setScore(score + config["default_xp"]);
       question.answered = true;
     }
-    console.log(module);
   };
 
   return (
     <>
+    <Head>
+      <title>QUIZ ITIL - {module?.name}</title>
+    </Head>
       <div className={styles.container}>
         {(() => {
           switch (currentStep) {

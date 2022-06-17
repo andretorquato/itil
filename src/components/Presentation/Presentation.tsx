@@ -8,10 +8,11 @@ import styles from "./Presentation.module.scss";
 
 interface PresentationProps {
   module: ModuleProps;
+  buttonText?: string;
   next: () => void;
 }
 
-const Presentation: NextPage<PresentationProps> = ({ module, next }) => {
+const Presentation: NextPage<PresentationProps> = ({ module, buttonText, next }) => {
   return (
     <div className={styles.container}>
       <h1>Cenário {module?.name}</h1>
@@ -30,7 +31,7 @@ const Presentation: NextPage<PresentationProps> = ({ module, next }) => {
           ))}
       </div>
       <Button variant="contained" onClick={next}>
-        Agora quero ser testado(a)!
+        { buttonText ? buttonText : 'Agora quero ser testado(a)!' } 
       </Button>
     </div>
   );

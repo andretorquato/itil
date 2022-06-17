@@ -1,3 +1,6 @@
+@import "../../../styles/animations/slide-left";
+@import "../../../styles/animations/shake_horizontal";
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -33,14 +36,14 @@
 			padding: 12px 8px !important;
 			border-radius: 6px;
 			min-width: 100%;
-		
+
 			&.active {
 				position: relative;
 				color: var(--primary);
 				font-weight: 700;
 				background-color: var(--primary-30);
 
-				span{
+				span {
 					color: var(--primary);
 				}
 
@@ -54,10 +57,10 @@
 					background-color: var(--primary);
 					border-radius: 6px;
 					z-index: -1;
-					
+
 				}
 			}
-		
+
 			&:active,
 			&:hover {
 				opacity: 0.9;
@@ -68,6 +71,24 @@
 	.options {
 		border-right: 3px dashed #ccc;
 	}
+}
+
+.activeQuestion {
+	.options {
+		@include anim-slid-left;
+	}
+
+	&.wrong-question {
+		.options {
+			@include anim-shake;
+		}
+
+	}
+}
+
+.actions {
+	display: flex;
+	justify-content: flex-end;
 }
 
 .wrong-answer {

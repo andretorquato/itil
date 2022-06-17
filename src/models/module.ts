@@ -21,4 +21,5 @@ export interface Question {
 		ctx: string;
 	}>;
 	question: string;
+	tag?: Array<string>;
 }
