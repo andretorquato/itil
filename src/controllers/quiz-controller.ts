@@ -15,6 +15,7 @@ export const saveProgress = (module: ModuleProps, score: number) => {
 	const newQuestions = questions.map(q => ({ id: q.id, answered: q.answered }));
 	if (sessionData) {
 		let data = JSON.parse(sessionData);
+		const { completedIntroduction } = data;
 		let { completedModules } = data;
 		const newCompletedModules = [...completedModules];
 		const addedModule = completedModules.find((m: any) => m.id == id);
@@ -23,6 +24,7 @@ export const saveProgress = (module: ModuleProps, score: number) => {
 		else 
 			newCompletedModules.push({ id, name, slug, questions: newQuestions });
 		let newData = {
+			completedIntroduction,
 			score: score,
 			completedModules: newCompletedModules
 		};
@@ -32,6 +34,7 @@ export const saveProgress = (module: ModuleProps, score: number) => {
 	localStorage.setItem(
 		config.session,
 		JSON.stringify({
+			competedIntroduction: true,
 			score,
 			completedModules: [
 				{ id, name, slug, questions: newQuestions },
