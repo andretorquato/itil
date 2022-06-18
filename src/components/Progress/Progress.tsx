@@ -20,7 +20,7 @@ const Progress: NextPage<ProgressProps> = ({ activeIndex, total }) => {
 			className={styles.progressBar}
         style={{
           width: width,
-          height: 6,
+          height: 8,
           borderRadius: 3,
           backgroundColor: "var(--primary)",
           transition: "width 0.5s ease-in-out",

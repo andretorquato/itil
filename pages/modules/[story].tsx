@@ -68,7 +68,10 @@ const Story: NextPage = () => {
     const question = module.questions.find((q: any) => q.id === activeQ.id);
     if (question && !question.answered) {
       setScore(score + config["default_xp"]);
-      question.answered = true;
+      setTimeout(() => {
+        question.answered = true;
+      }, 500);
+      
     }
   };
 
@@ -81,9 +84,9 @@ const Story: NextPage = () => {
         {(() => {
           switch (currentStep) {
             case "introduction":
-              return <Introduction module={module} next={nextStep} />;
+              return <Introduction module={module} next={nextStep} />
             case "contextualization":
-              return <Presentation module={module} next={nextStep} />;
+              return <Presentation module={module} next={nextStep} />
             case "questions":
               return (
                 <Questions
@@ -92,7 +95,7 @@ const Story: NextPage = () => {
                   next={nextStep}
                   updateScore={updateScore}
                 />
-              );
+              )
           }
         })()}
       </div>

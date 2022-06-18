@@ -45,10 +45,25 @@ const Questions: NextPage<QuestionProps> = ({
   }, [isWrongAnswer]);
 
   const optionClass = (optionId: number) => {
-    const classes = styles.option;
-    return optionId == selectedAnswerID
-      ? `${styles.option} ${styles.active}`
-      : classes;
+    console.log("excute");
+
+    // show right answer
+    if (!showActions && optionId === activeQuestion?.answer_id)
+      return `${styles.option} ${styles.right}`;
+
+    if (
+      !showActions &&
+      optionId === selectedAnswerID &&
+      selectedAnswerID != activeQuestion?.answer_id
+    )
+      return `${styles.option} ${styles.wrong}`;
+
+    // selected answer
+    if (optionId === selectedAnswerID)
+      return `${styles.option} ${styles.active}`;
+
+    // default answer
+    return styles.option;
   };
 
   const answer = () => {
@@ -57,7 +72,6 @@ const Questions: NextPage<QuestionProps> = ({
     if (isWrongAnswer) {
       setIsWrongAnswer(isWrongAnswer);
       songEl && songEl.current?.play();
-      console.log(songEl);
     }
     if (!isWrongAnswer) updateScore(activeQuestion);
     setShowActions(false);
@@ -65,9 +79,10 @@ const Questions: NextPage<QuestionProps> = ({
 
   const nextQuestion = () => {
     if (indexActiveQuestion < module.questions.length) {
+      const nextQuestion = module.questions[indexActiveQuestion];
       setActiveQuestion(null);
       setTimeout(() => {
-        setActiveQuestion(module.questions[indexActiveQuestion]);
+        setActiveQuestion(nextQuestion);
         setIndexActiveQuestion(indexActiveQuestion + 1);
         setSelectedAnswerID(null);
       }, 100);
@@ -91,33 +106,41 @@ const Questions: NextPage<QuestionProps> = ({
   const handleChangeVisibleContext = () => {
     setShowContext(!showContext);
   };
+
+  const handleChangeSelectedOption = (optionId: number) => {
+    if (!showActions) return;
+
+    setSelectedAnswerID(optionId);
+  };
   return (
     <>
       {!showContext ? (
         <div className={styles.container}>
           <Score score={score} />
-          <nav>
-            <div>
+          <nav className={styles.progressContainer}>
+            <span>
               {indexActiveQuestion}/{module.questions.length} questões
               respondidas
-            </div>
-            <div>
-              <Progress
-                activeIndex={indexActiveQuestion}
-                total={module.questions.length}
-              />
-            </div>
+            </span>
+            <Progress
+              activeIndex={indexActiveQuestion}
+              total={module.questions.length}
+            />
           </nav>
           {activeQuestion && (
             <div className={ativeQuestionClasses}>
               <h2>{activeQuestion.question}</h2>
-              <span>+2 pontos</span>
+              {!activeQuestion?.answered && (
+                <span style={{ color: "var(--primary)", margin: "1rem 0" }}>
+                  +2 pontos
+                </span>
+              )}
               <ul className={styles.options}>
                 {activeQuestion.options.map((op: any) => {
                   return (
                     <li
                       className={optionClass(op.id)}
-                      onClick={() => setSelectedAnswerID(op?.id)}
+                      onClick={() => handleChangeSelectedOption(op?.id)}
                       key={op?.id}
                     >
                       <span>{op?.ctx}</span>
@@ -128,26 +151,27 @@ const Questions: NextPage<QuestionProps> = ({
               {isWrongAnswer && (
                 <div>
                   <p className={styles["wrong-answer"]}>
-                    <span>
-                      <strong>Ops!</strong>
-                    </span>
-                    <span>Você errou a resposta.</span>
-                  </p>
-                  <p>
-                    <span>
-                      <strong>Resposta correta:</strong>
-                    </span>
-                    <span>{getRightAnswer()}</span>
+                    Você errou, a resposta correta é: <br />
+                    <i>{getRightAnswer()}</i>
                   </p>
                 </div>
               )}
+
               {!showActions && !isWrongAnswer && (
                 <div>
                   <p className={styles["right-answer"]}>
-                    Parabéns! Você acertou.
+                    Você acertou!{" "}
+                    {!activeQuestion?.answered ? (
+                      <span> +2 pontos</span>
+                    ) : (
+                      <span>
+                        Mas você já recebeu a pontuação por está questão
+                      </span>
+                    )}
                   </p>
                 </div>
               )}
+
               {!showActions && (
                 <div className={styles.actions}>
                   <Button variant="contained" onClick={nextQuestion}>

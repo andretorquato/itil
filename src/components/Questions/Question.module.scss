@@ -37,16 +37,12 @@
 			border-radius: 6px;
 			min-width: 100%;
 
+			&.wrong,
+			&.right,
 			&.active {
-				position: relative;
-				color: var(--primary);
-				font-weight: 700;
-				background-color: var(--primary-30);
-
-				span {
-					color: var(--primary);
-				}
-
+				position: relative;	
+				transition: all 0.3s ease-in;
+			
 				&::before {
 					content: "";
 					position: absolute;
@@ -54,10 +50,53 @@
 					left: -36px;
 					width: 2px;
 					height: 90%;
-					background-color: var(--primary);
 					border-radius: 6px;
 					z-index: -1;
 
+				}
+
+				&.wrong,
+				&.right {
+					transition: all 1s ease-in-out;
+				}
+
+				&.active {
+					color: var(--primary);
+					background-color: var(--primary-30);
+					font-weight: 700;
+					
+					span {
+						color: var(--primary);
+					}
+
+					&::before {
+						background-color: var(--primary);
+					}
+
+				}
+
+				&.right {
+					color: var(--success);
+					
+					span {
+						color: var(--success);
+					}
+
+					&::before {
+						background-color: var(--success);
+					}
+				}
+	
+				&.wrong {
+					color: var(--danger);
+					
+					span {
+						color: var(--danger);
+					}
+
+					&::before {
+						background-color: var(--danger);
+					}
 				}
 			}
 
@@ -70,6 +109,16 @@
 
 	.options {
 		border-right: 3px dashed #ccc;
+	}
+}
+
+.progressContainer {
+	margin: 1rem 0 2rem !important;
+	width: 100%;
+
+	span {
+		display: block;
+		text-align: center;
 	}
 }
 
@@ -92,11 +141,13 @@
 }
 
 .wrong-answer {
-	color: red;
+	text-align: left;
+	color: var(--danger);
 }
 
 .right-answer {
-	color: green;
+	text-align: left;
+	color: var(--success);
 }
 
 @media screen and (max-width: 720px) {
