@@ -71,15 +71,15 @@
 						},
 						{
 							"id": 2,
-							"ctx": "Selecionar e estudar possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos. "
+							"ctx": "Desconsiderar o estudo de possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos."
 						},
 						{
 							"id": 3,
-							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico, a fim de manter o alinhamento entre os planos e permitir as devidas melhorias nos serviços prestados."
+							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico."
 						},
 						{
 							"id": 4,
-							"ctx": "Selecionar uma equipe única especializada na construção de novos modelos de serviços baseados na estrutura já empregada pela empresa, mesmo que isso ocupe muito tempo e não permita a participação de partes interessadas nas mudanças."
+							"ctx": "Selecionar uma equipe única para construir um novo framework baseado apenas na estrutura da empresa."
 						}
 					],
 					"answer_id": 1,
@@ -99,12 +99,12 @@
 				"html": "<h2>MÓDULO 01 - FUNDAMENTOS DE ITIL</h2><p><br></p><h3>PARTE 02</h3><p><br></p><p>São cinco (5) livros que compõem a biblioteca da versão 3 da ITIl, sendo eles:&nbsp;&nbsp;</p><p><br></p><p><br></p><p><strong>ESTRATÉGIA DE SERVIÇO:</strong></p><p><br></p><p>Os melhores projetos são feitos com base nas melhores estratégias, não é?&nbsp;</p><p>Então é neste livro que você vai encontrar as decisões estratégicas relacionadas aos serviços, além de prever e conceituar um conjunto de serviços que possam ajudar o negócio a alcançar os seus objetivos.</p><p><br></p><p><br></p><p><br></p><p><strong>DESIGN DE SERVIÇO:</strong></p><p><br></p><p>Basicamente projeta o que a estratégia decidiu. Aqui é feito os desenhos ou projeções de serviços&nbsp; tendo em vista os objetivos de utilidade e garantia.&nbsp;</p><p><br></p><p><br></p><p><strong>TRANSIÇÃO DE SERVIÇO:</strong></p><p><br></p><p>Com grandes ideias, vêm grandes práticas!</p><p>Neste livro é mostrado como se movem os serviços planejados para o ambiente de produção, passando por etapas de desenvolvimento, teste e liberação de forma controlada.</p><p><br></p><p><br></p><p><strong>OPERAÇÃO DE SERVIÇO:</strong></p><p><br></p><p>Com os serviços em andamento, é preciso gerenciá-los adequadamente, já que é aqui onde estão os processos do dia a dia que mantêm os serviços funcionando.</p><p><br></p><p>Para isso, o livro de Operação de Serviço busca mostrar o gerenciamento dos serviços em produção, para assegurar que os objetivos sejam alcançados com utilidade e garantia.</p><p><br></p><p><br></p><p><br></p><p><strong>MELHORIA CONTÍNUA DE SERVIÇO:</strong></p><p><br></p><p>Serviços são providos para atingir seus objetivos continuamente, assim, este livro busca avaliar os serviços e identificar formas de melhorar sua utilidade.&nbsp;</p><p><br></p>"
 			},
 			"context": {
-				"images": ["/modules/fundamentals/comic-2.jpeg"]
+				"images": ["/modules/fundamentals/comic-1.jpeg"]
 			},
 			"questions": [
 				{
 					"id": 1,
-					"question": "Quais os livros que compõem a biblioteca da versão 3 da ITIL?",
+					"question": "Quais as fases que compõem a biblioteca da versão 3 da ITIL?",
 					"options": [
 						{
 							"id": 1,
@@ -127,7 +127,7 @@
 				},
 				{
 					"id": 2,
-					"question": "Em qual dos  livros que compõem a biblioteca da versão 3 da ITIL aborda as decisões estratégicas relacionadas aos serviços?",
+					"question": "Em qual dos  fases que compõem a biblioteca da versão 3 da ITIL aborda as decisões estratégicas relacionadas aos serviços?",
 					"options": [
 						{
 							"id": 1,
@@ -200,19 +200,19 @@
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Reconsideraria o estudo de outros frameworks de boas práticas de serviços, mesmo esses frameworks não serem tão voltados aos objetivos da organização nesse momento"
+							"ctx": "Reconsideraria aplicar apenas os frameworks já utilizados na empresa, mesmo se esses frameworks não estiverem voltados aos objetivos da organização nesse momento."
 						},
 						{
 							"id": 2,
-							"ctx": "Consideraria utilizar o framework ITIL, já que ele apresenta objetivamente as boas práticas através do ciclo de vida dos serviços de TI."
+							"ctx": "Consideraria utilizar o framework ITIL, já que ele apresenta objetivamente as boas práticas de serviço através do ciclo de vida dos serviços de TI."
 						},
 						{
 							"id": 3,
-							"ctx": "Adotaria a criação de novas práticas de serviços baseados em diferentes frameworks. Isso selecionaria a melhor parte de cada framework e aplicaria na organização, por meio da avaliação do contexto único da empresa, apenas o essencial e inovador."
+							"ctx": "Adotaria a criação de novas práticas de serviços, baseados apenas no contexto da empresa. "
 						},
 						{
 							"id": 4,
-							"ctx": "Incentivaria repetir o processo de análise do contexto da empresa. Isso poderia auxiliar na escolha de algum framework que garanta o alcance dos objetivos. Se não chegamos a uma decisão, então não conhecemos a organização devidamente."
+							"ctx": "Incentivaria repetir, indefinidamente, o processo de análise do contexto da empresa, já que a indecisão mostra que não conhecemos a organização devidamente. Se não chegarmos a uma conclusão, então repetimos o processo novamente."
 						}
 					],
 					"answer_id": 2,
@@ -232,129 +232,60 @@
 				"html": "<h2>MÓDULO 02 - ESTRATÉGIAS DE SERVIÇO</h2><p><br></p><h3>PARTE 01</h3><p><br></p><p>Como uma pessoa bastante curiosa, você deve estar se perguntando:&nbsp;</p><p><br></p><p><em>E como esses livros podem ajudar a minha empresa?</em></p><p><br></p><p>Supondo que você tenha uma empresa, é claro!&nbsp;</p><p><br></p><p>Como dito anteriormente, a ITIL é um conjunto de melhores práticas de gerenciamento de TI. Essas melhores práticas significam, basicamente, fazer o que todos estão fazendo a fim de se obter também um resultado satisfatório.</p><p><br></p><p>Isso quer dizer que a ITIL, através de técnicas de benchmarking, buscou agrupar as técnicas, atividades, processos, regras, metodologias e práticas que conseguiram garantir o melhor desempenho na TI de empresas de sucesso.</p><p><br></p><p>Imagine assim, se alguém sabe os melhores procedimentos para deixar a grama do quintal sempre verde e perfeitamente aparada, todo mundo que almeja esse mesmo resultado, ou algo parecido, tentará estudar, analisar, e aplicar na sua própria grama, da sua própria maneira, os procedimentos.</p><p><br></p><p>O mesmo acontece com a ITIL no contexto da TI empresarial!</p><p><br></p>"
 			},
 			"context": {
-				"images": [
-					"/modules/fundamentals/comic-1.jpeg",
-					"/modules/fundamentals/comic-2.jpeg"
-				]
+				"images": ["/modules/structure/comic-1.png"]
 			},
 			"questions": [
 				{
 					"id": 1,
-					"question": "O que é o ITIL?",
+					"question": "Como citado no cenário, o Planejamento Estratégico da Diretoria de TI foi dividido conforme o foco de ação em clientes, financeiro, excelência operacional e aprendizado e crescimento. Indique qual outro objetivo se enquadra em Excelência operacional.",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Uma metodologia"
+							"ctx": "Gerir ações para aumento da satisfação dos clientes internos"
 						},
 						{
 							"id": 2,
-							"ctx": "Uma Ferramenta"
+							"ctx": "Elaborar modelo de custos"
 						},
 						{
 							"id": 3,
-							"ctx": "Um software"
+							"ctx": "Gerenciamento dos processos de engenharia, arquitetura e manutenção"
 						},
 						{
 							"id": 4,
-							"ctx": "Conjunto de práticas de gerenciamento de TI"
+							"ctx": "Planejar a implantação de ações da governança de TI"
 						}
 					],
-					"answer_id": 4
+					"answer_id": 3,
+					"tag": [
+						"context"
+					]
 				},
 				{
 					"id": 2,
-					"question": "Qual o significado da  sigla ITIL?",
+					"question": "Semelhante à questão anterior, indique qual objetivo se enquadra em ações para clientes e parceiros internos.",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Information Technology Infrastructure Library"
+							"ctx": "Gerir ações para aumento da satisfação das Gerências de Tecnologia e Engenharia das regionais"
 						},
 						{
 							"id": 2,
-							"ctx": "Information TI  Library"
+							"ctx": "Gerir as demandas de contratação"
 						},
 						{
 							"id": 3,
-							"ctx": "Intelligent Technology Infrastructure Library"
+							"ctx": "Gerenciamento dos processos de engenharia, arquitetura e manutenção"
 						},
 						{
 							"id": 4,
-							"ctx": "Intelligent Technology Inside Library"
-						}
-					],
-					"answer_id": 1
-				},
-				{
-					"id": 3,
-					"question": "Quais os livros que compõem a biblioteca da versão 3 da ITIL?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Estratégia de marketing, Design de serviço e Transição financeira"
-						},
-						{
-							"id": 2,
-							"ctx": "Serviços melhorados e Serviços contínuos"
-						},
-						{
-							"id": 3,
-							"ctx": "Melhoria contínua de marketing"
-						},
-						{
-							"id": 4,
-							"ctx": "Estratégia de serviço,Design de serviço,Transição de serviço,Operação de serviço e Melhoria contínua de serviço"
-						}
-					],
-					"answer_id": 4
-				},
-				{
-					"id": 4,
-					"question": "Após a leitura do cenário, terminamos o quadrinho com a seguinte pergunta: “O que você sugere que seja feito inicialmente?” Considere que você é o gestor de TI na situação, qual a sua resposta?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Analisar o contexto da empresa no presente, reavaliando o papel da governança, da estrutura de TI (Frameworks e modelos adotados), do alinhamento com os objetivos estratégicos e o funcionamento dos serviços."
-						},
-						{
-							"id": 2,
-							"ctx": "Selecionar e estudar possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos. "
-						},
-						{
-							"id": 3,
-							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico, a fim de manter o alinhamento entre os planos e permitir as devidas melhorias nos serviços prestados."
-						},
-						{
-							"id": 4,
-							"ctx": "Selecionar uma equipe única especializada na construção de novos modelos de serviços baseados na estrutura já empregada pela empresa, mesmo que isso ocupe muito tempo e não permita a participação de partes interessadas nas mudanças."
+							"ctx": "Planejar a gestão de riscos"
 						}
 					],
 					"answer_id": 1,
 					"tag": [
 						"context"
 					]
-				},
-				{
-					"id": 5,
-					"question": "Em qual dos  livros que compõem a biblioteca da versão 3 da ITIL aborda as decisões estratégicas relacionadas aos serviços?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Estratégia para decisão"
-						},
-						{
-							"id": 2,
-							"ctx": "O poder da estratégia"
-						},
-						{
-							"id": 3,
-							"ctx": "Estratégia de Serviços"
-						},
-						{
-							"id": 4,
-							"ctx": "Serviços com estratégia"
-						}
-					],
-					"answer_id": 3
 				}
 			]
 		},
@@ -368,100 +299,97 @@
 				"html": "<h2>MÓDULO 02 - ESTRATÉGIAS DE SERVIÇO</h2><h3>PARTE 02</h3><p><br></p><p>Vamos continuar esse módulo abordando brevemente o primeiro livro da biblioteca ITIL:&nbsp;</p><p><br></p><p>ESTRATÉGIAS DE SERVIÇO.</p><p><br></p><p>É nele que você vai estudar os caminhos para prover serviços na área de TI.&nbsp;</p><p class=\"ql-align-center\"><br></p><p>Antes de iniciar os serviços, a organização de TI deve saber qual o seu mercado, o que será ofertado e quais os ativos que possui.&nbsp;</p><p><br></p><p>O <strong>espaço de mercado</strong> é definido como um conjunto de resultados de negócio facilitados por um serviço de TI, gerando valor no relacionamento entre os provedores do serviço e os clientes.&nbsp;</p><p><br></p><p>Os clientes sabem quais as suas necessidades e desejam resolvê-las com o menor custo e risco possível. Então cabe aos provedores incorporar estas condições aos serviços que entregam, provendo suporte para que os clientes alcancem os resultados esperados de seus negócios.</p><p><br></p><p>Tendo em mente qual o seu mercado, a TI deve começar a desenvolver a sua <strong>oferta</strong>.&nbsp; Assim, deve-se identificar os serviços que precisam ser oferecidos aos clientes e iniciar projetos para o desenvolvimento dos mesmos.</p><p><br></p><p>Com as ofertas de serviço já definidas, então deve-se identificar os <strong>ativos estratégicos</strong> que possam ser usados como blocos de construção para a criação dos serviços, como por exemplo os recursos, que são entradas diretas para produção.</p><p><br></p><p>Por fim, basta preparar-se para a execução!&nbsp;</p><p><br></p><p>A organização de TI precisa estar preparada para ser capaz de efetuar com sucesso a estratégia de serviço. A preparação para execução inclui</p><p><br></p><ul><li>Identificar os fatores críticos de sucesso</li><li>Identificar os objetivos de condução</li><li>Definir as iniciativas de priorização</li><li>Promover o crescimento e a diferenciação da organização de TI.</li></ul><p><br></p>"
 			},
 			"context": {
-				"images": [
-					"/modules/fundamentals/comic-1.jpeg",
-					"/modules/fundamentals/comic-2.jpeg"
-				]
+				"images": ["/modules/structure/comic-2.png"]
 			},
 			"questions": [
 				{
 					"id": 1,
-					"question": "O que é o ITIL?",
+					"question": "“O ____________ é definido como um conjunto de resultados de negócio facilitados por um serviço de TI, gerando valor no relacionamento entre os provedores do serviço e os clientes.”A afirmação acima, é a definição de:",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Uma metodologia"
+							"ctx": "Espaço de mercado"
 						},
 						{
 							"id": 2,
-							"ctx": "Uma Ferramenta"
+							"ctx": "Valor de mercado"
 						},
 						{
 							"id": 3,
-							"ctx": "Um software"
+							"ctx": "Resultado de mercado"
 						},
 						{
 							"id": 4,
-							"ctx": "Conjunto de práticas de gerenciamento de TI"
-						}
-					],
-					"answer_id": 4
-				},
-				{
-					"id": 2,
-					"question": "Qual o significado da  sigla ITIL?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Information Technology Infrastructure Library"
-						},
-						{
-							"id": 2,
-							"ctx": "Information TI  Library"
-						},
-						{
-							"id": 3,
-							"ctx": "Intelligent Technology Infrastructure Library"
-						},
-						{
-							"id": 4,
-							"ctx": "Intelligent Technology Inside Library"
+							"ctx": "Design de serviço"
 						}
 					],
 					"answer_id": 1
 				},
 				{
-					"id": 3,
-					"question": "Quais os livros que compõem a biblioteca da versão 3 da ITIL?",
+					"id": 2,
+					"question": "Após definir e ter em mente o seu espaço de mercado, o que a TI deve começar a desenvolver?",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Estratégia de marketing, Design de serviço e Transição financeira"
+							"ctx": "A sua demanda, planejando como atrair mais clientes"
 						},
 						{
 							"id": 2,
-							"ctx": "Serviços melhorados e Serviços contínuos"
+							"ctx": "O seu negócio"
 						},
 						{
 							"id": 3,
-							"ctx": "Melhoria contínua de marketing"
+							"ctx": "A sua oferta, identificando os serviços que precisam ser oferecidos aos clientes"
 						},
 						{
 							"id": 4,
-							"ctx": "Estratégia de serviço,Design de serviço,Transição de serviço,Operação de serviço e Melhoria contínua de serviço"
+							"ctx": "Como blocos de construção para a criação dos serviços"
 						}
 					],
 					"answer_id": 4
 				},
 				{
-					"id": 4,
-					"question": "Após a leitura do cenário, terminamos o quadrinho com a seguinte pergunta: “O que você sugere que seja feito inicialmente?” Considere que você é o gestor de TI na situação, qual a sua resposta?",
+					"id": 3,
+					"question": "A preparação para execução da estratégia de serviço inclui alguns pontos. Marque a opção em que NÃO faz parte da preparação para a execução dessa estratégia:",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Analisar o contexto da empresa no presente, reavaliando o papel da governança, da estrutura de TI (Frameworks e modelos adotados), do alinhamento com os objetivos estratégicos e o funcionamento dos serviços."
+							"ctx": "Identificar os fatores críticos de sucesso"
 						},
 						{
 							"id": 2,
-							"ctx": "Selecionar e estudar possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos. "
+							"ctx": "Identificar as normas documentativas"
 						},
 						{
 							"id": 3,
-							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico, a fim de manter o alinhamento entre os planos e permitir as devidas melhorias nos serviços prestados."
+							"ctx": "Definir as iniciativas de priorização"
 						},
 						{
 							"id": 4,
-							"ctx": "Selecionar uma equipe única especializada na construção de novos modelos de serviços baseados na estrutura já empregada pela empresa, mesmo que isso ocupe muito tempo e não permita a participação de partes interessadas nas mudanças."
+							"ctx": "Identificar os objetivos de condução"
+						}
+					],
+					"answer_id": 2
+				},
+				{
+					"id": 4,
+					"question": "De acordo com o Planejamento do Departamento de Integração e Suporte Técnico citado no cenário, indique outro objetivo que se enquadre na Excelência Operacional.",
+					"options": [
+						{
+							"id": 1,
+							"ctx": "Prestar serviços no prazo e com qualidade"
+						},
+						{
+							"id": 2,
+							"ctx": "Gerir as demandas de contratação"
+						},
+						{
+							"id": 3,
+							"ctx": "Demandar a capacitação da equipe de acordo com as competências requeridas"
+						},
+						{
+							"id": 4,
+							"ctx": "Apoiar a implantação de ações da governança de TI"
 						}
 					],
 					"answer_id": 1,
@@ -504,129 +432,103 @@
 				"html": "<h2>MÓDULO 02 - ESTRATÉGIAS DE SERVIÇO</h2><p><br></p><h3>PARTE 03</h3><p><br></p><p><br></p><p>Ufa! Quanta coisa, não é?</p><p><br></p><p>Mas isso foi apenas o começo!</p><p><br></p><p>O livro de ESTRATÉGIAS DE SERVIÇO estende-se muito mais além do que algumas definições, já que ele é composto por 3 processos:</p><p><br></p><ul><li><strong>1º Processo:&nbsp; &nbsp; </strong>Gerenciamento da Demanda</li><li><strong>2º Processo:&nbsp; &nbsp; </strong>Gerenciamento de Portfólio</li><li><strong>3º Processo:&nbsp; &nbsp; </strong>Gerenciamento Financeiro</li></ul><p><br></p><p><br></p><p>Cada processo possui seu foco e compreende as melhores práticas para criar uma estratégia propriamente dita de oferecimento de serviços de TI.</p><p><br></p><p>Peguemos o Gerenciamento de Portfólio, por exemplo. Seus principais propósitos são:&nbsp;</p><p><br></p><ul><li>Descrever os serviços de um provedor.</li><li>Definindo as necessidades do negócio e as suas soluções.</li><li>Fornecer informações sobre todos os serviços por meio do ciclo de vida.</li><li>Ajudar na governança de TI, informando as atividades da TI.</li></ul><p><br></p><p>Além de auxiliar na identificação dos serviços que estão sendo desenvolvidos, os que estão em operação e os que devem ser retirados ou já foram retirados de operação.</p><p><br></p><p>Como só temos 3 Processos nessa primeira publicação, então é bem fácil!</p><p><br></p><p>Agora que já definimos alguns aspectos essenciais para a organização de TI e conhecemos as 3 divisões de processos das Estratégia de Serviço, que tal praticarmos um pouco?</p><p><br></p><p>Vamos&nbsp; lá!</p>"
 			},
 			"context": {
-				"images": [
-					"/modules/fundamentals/comic-1.jpeg",
-					"/modules/fundamentals/comic-2.jpeg"
-				]
+				"images": ["/modules/structure/comic-3.png"]
 			},
 			"questions": [
 				{
 					"id": 1,
-					"question": "O que é o ITIL?",
+					"question": "A fase de ESTRATÉGIAS DE SERVIÇO estende-se muito mais além do que algumas definições, já que ele é composto por 3 processos. Marque a alternativa em que NÃO é um processo do fase de Estratégias de serviço.",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Uma metodologia"
+							"ctx": "Gerenciamento de demanda"
 						},
 						{
 							"id": 2,
-							"ctx": "Uma Ferramenta"
+							"ctx": "Gerenciamento de Portfólio"
 						},
 						{
 							"id": 3,
-							"ctx": "Um software"
+							"ctx": "Gerenciamento Financeiro"
 						},
 						{
 							"id": 4,
-							"ctx": "Conjunto de práticas de gerenciamento de TI"
+							"ctx": "Gerenciamento de oferta"
 						}
 					],
 					"answer_id": 4
 				},
 				{
 					"id": 2,
-					"question": "Qual o significado da  sigla ITIL?",
+					"question": "Sobre o Gerenciamento de portfólio, marque a alternativa que NÃO faz parte dos seus principais propósitos.",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Information Technology Infrastructure Library"
+							"ctx": "Descrever os serviços de um provedor"
 						},
 						{
 							"id": 2,
-							"ctx": "Information TI  Library"
+							"ctx": "Ajudar na governança de TI, informando as atividades da TI."
 						},
 						{
 							"id": 3,
-							"ctx": "Intelligent Technology Infrastructure Library"
+							"ctx": "Gerenciar a governança de TI"
 						},
 						{
 							"id": 4,
-							"ctx": "Intelligent Technology Inside Library"
+							"ctx": "Fornecer informações sobre todos os serviços por meio do ciclo de vida"
+						}
+					],
+					"answer_id": 3
+				},
+				{
+					"id": 3,
+					"question": "“...auxiliar na identificação dos serviços que estão sendo desenvolvidos, os que estão em operação e os que devem ser retirados ou já foram retirados de operação.”A frase acima se refere a qual processo da estratégia de serviço?",
+					"options": [
+						{
+							"id": 1,
+							"ctx": "Gerenciamento de Portfólio"
+						},
+						{
+							"id": 2,
+							"ctx": "Gerenciamento financeiro"
+						},
+						{
+							"id": 3,
+							"ctx": "Gerenciamento de demanda"
+						},
+						{
+							"id": 4,
+							"ctx": "Gerenciamento de oferta"
 						}
 					],
 					"answer_id": 1
 				},
 				{
-					"id": 3,
-					"question": "Quais os livros que compõem a biblioteca da versão 3 da ITIL?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Estratégia de marketing, Design de serviço e Transição financeira"
-						},
-						{
-							"id": 2,
-							"ctx": "Serviços melhorados e Serviços contínuos"
-						},
-						{
-							"id": 3,
-							"ctx": "Melhoria contínua de marketing"
-						},
-						{
-							"id": 4,
-							"ctx": "Estratégia de serviço,Design de serviço,Transição de serviço,Operação de serviço e Melhoria contínua de serviço"
-						}
-					],
-					"answer_id": 4
-				},
-				{
 					"id": 4,
-					"question": "Após a leitura do cenário, terminamos o quadrinho com a seguinte pergunta: “O que você sugere que seja feito inicialmente?” Considere que você é o gestor de TI na situação, qual a sua resposta?",
+					"question": "Após a leitura do cenário, terminamos o quadrinho com a seguinte pergunta: “O que sugere que façamos?” Considere que você apresentou a observação durante o planejamento estratégico, qual a sua resposta?",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Analisar o contexto da empresa no presente, reavaliando o papel da governança, da estrutura de TI (Frameworks e modelos adotados), do alinhamento com os objetivos estratégicos e o funcionamento dos serviços."
+							"ctx": "Apresentaria mais propostas para acrescentar aos objetivos de Aprendizagem e Crescimento."
 						},
 						{
 							"id": 2,
-							"ctx": "Selecionar e estudar possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos. "
+							"ctx": "Reconsideraria minha observação como sendo desnecessária para a gerência de serviços."
 						},
 						{
 							"id": 3,
-							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico, a fim de manter o alinhamento entre os planos e permitir as devidas melhorias nos serviços prestados."
+							"ctx": "Sugeria focar apenas na governança da TI como solução para a gerência de risco."
 						},
 						{
 							"id": 4,
-							"ctx": "Selecionar uma equipe única especializada na construção de novos modelos de serviços baseados na estrutura já empregada pela empresa, mesmo que isso ocupe muito tempo e não permita a participação de partes interessadas nas mudanças."
+							"ctx": "Sugeria acrescentar a gestão de riscos dos serviços aos objetivos de Excelência Operacional."
 						}
 					],
-					"answer_id": 1,
+					"answer_id": 4,
 					"tag": [
 						"context"
 					]
-				},
-				{
-					"id": 5,
-					"question": "Em qual dos  livros que compõem a biblioteca da versão 3 da ITIL aborda as decisões estratégicas relacionadas aos serviços?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Estratégia para decisão"
-						},
-						{
-							"id": 2,
-							"ctx": "O poder da estratégia"
-						},
-						{
-							"id": 3,
-							"ctx": "Estratégia de Serviços"
-						},
-						{
-							"id": 4,
-							"ctx": "Serviços com estratégia"
-						}
-					],
-					"answer_id": 3
 				}
 			]
 		},
@@ -640,34 +542,34 @@
 				"html": "<h2>MÓDULO 03 - DESIGN DE SERVIÇO</h2><p><br></p><h3>PARTE 01</h3><p><br></p><p>Uau, veja só onde estamos!</p><p><br></p><p>Caminhamos bastante jovem Padawan, mas esse ainda não é o fim.</p><p><br></p><p>Vamos ver agora um pouco do segundo livro da biblioteca ITIL. Você sabe qual é?</p><p><br></p><p>Isso mesmo, design de serviços!</p><p><br></p><p>É nele que você vai conhecer as práticas recomendadas para o projeto de serviços de TI, os processos de projetos de serviços e os procedimentos de requisitos para desenhar um serviço de TI.</p><p><br></p><p>Mas para facilitar mais nosso aprendizado, vamos dar apenas alguns spoiler das melhores práticas de gerenciamento do livro. ;)</p><p><br></p><p>Começaremos com o Gerenciamento De Nível De Serviço. Basicamente, é processo que forma vínculo entre o departamento de TI e os clientes. Seu foco principal é assegurar a qualidade dos serviços de TI fornecidos, com custo aceitável para o negócio.</p><p><br></p><p>Mas não esqueça, para implantar este processo com sucesso é necessário que os outros processos da ITIL já tenham sido implantados.</p><p><br></p><p>Para atingir seus objetivos de manter e melhorar a qualidade dos serviços, o Gerenciamento do Nível de Serviço é aplicado através de um ciclo constante de acordos, monitoração, relatórios e melhoria dos níveis de serviços.</p><p><br></p><p>Ele é estrategicamente focado no negócio, mantendo o alinhamento entre o negócio e a TI.</p><p><br></p><p>Inteligente, não é?</p>"
 			},
 			"context": {
-				"images": [
-					"/modules/fundamentals/comic-1.jpeg",
-					"/modules/fundamentals/comic-2.jpeg"
-				]
+				"images": ["/modules/design/comic-1.png"]
 			},
 			"questions": [
 				{
 					"id": 1,
-					"question": "O que é o ITIL?",
+					"question": "Após a leitura do cenário e do conteúdo sobre ITIL apresentado, de que forma é possível manter a qualidade dos serviços de Service Desk, Gerência de Incidentes e Gerência de Problemas?",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Uma metodologia"
+							"ctx": "Não é possível delimitar um nível de qualidade exato para os serviços, por isso deve-se conformar-se com a inconstância da qualidade."
 						},
 						{
 							"id": 2,
-							"ctx": "Uma Ferramenta"
+							"ctx": "Através do Gerenciamento do Nível de Serviço, que é feito por meio do ciclo de acordos, monitoramento, relatórios e melhoria dos níveis de serviços."
 						},
 						{
 							"id": 3,
-							"ctx": "Um software"
+							"ctx": "Somente pelo controle de disponibilidade."
 						},
 						{
 							"id": 4,
-							"ctx": "Conjunto de práticas de gerenciamento de TI"
+							"ctx": "Apenas garantir um bom atendimento ao cliente é o suficiente para garantir a qualidade dos serviços citados."
 						}
 					],
-					"answer_id": 4
+					"answer_id": 2,
+					"tag": [
+						"context"
+					]
 				},
 				{
 					"id": 2,
@@ -776,129 +678,126 @@
 				"html": "<h2>MÓDULO 03 - DESIGN DE SERVIÇO</h2><p><br></p><h3>PARTE 02</h3><p><br></p><p>E vamos continuar! Falta pouco meu amigo, eu prometo ;)</p><p><br></p><p>Após o Gerenciamento de Nível de Serviço, temos agora o Gerenciamento de Catálogo de Serviço.&nbsp;</p><p><br></p><p>Seu objetivo primário é assegurar que o catálogo de serviços seja produzido, mantido e contenha informações precisas sobre todos os serviços operacionais e também sobre aqueles que estão para entrar em produção.&nbsp;</p><p><br></p><p>O Catálogo de Serviços tem dois aspectos:</p><p><br></p><ul><li><strong>Catálogo de Serviços de Negócio: Contém detalhes de todos os serviços entregues ao cliente, junto com a relação das unidades e processos de negócio que usam os serviços de TI. Esta é a visão do cliente do Catálogo de Serviços. Por exemplo, sistema de folha de pagamento.&nbsp;</strong></li></ul><p><br></p><ul><li><strong>Catálogo de Serviços Tecnológicos: Contém detalhes de todos os serviços entregues ao cliente, junto com a relação dos serviços de suporte, serviços compartilhados e ICs (Itens de Configuração) necessários para suportar o serviço para o negócio, devendo apoiar o Catálogo de Serviços de Negócio e não fazer parte da visão do cliente. Por exemplo, aplicações, base de dados e servidores que compõem o sistema de folha de pagamento.</strong></li></ul><p><br></p><p><br></p><p>Por fim (ufa…) temos o Gerenciamento de disponibilidade.</p><p><br></p><p>É vital para a organização de TI gerenciar e controlar a disponibilidade dos seus serviços.</p><p><br></p><p>Isto é feito a partir da combinação dos requisitos de negócio com a disponibilidade dos serviços de TI. Assim, o objetivo do Gerenciamento da Disponibilidade é conseguir um mapeamento claro dos requisitos do negócio relacionados com a disponibilidade dos serviços de TI e aperfeiçoar a capacidade da infraestrutura para se alinhar a estas necessidades.</p>"
 			},
 			"context": {
-				"images": [
-					"/modules/fundamentals/comic-1.jpeg",
-					"/modules/fundamentals/comic-2.jpeg"
-				]
+				"images": ["/modules/design/comic-2.png"]
 			},
 			"questions": [
 				{
 					"id": 1,
-					"question": "O que é o ITIL?",
+					"question": "Sobre o GERENCIAMENTO DE CATÁLOGOS DE SERVIÇO, assinale a alternativa onde todos os objetivos estejam corretos",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Uma metodologia"
+							"ctx": "Produzir e analisar informações."
 						},
 						{
 							"id": 2,
-							"ctx": "Uma Ferramenta"
+							"ctx": "Analisar informações."
 						},
 						{
 							"id": 3,
-							"ctx": "Um software"
+							"ctx": "Produzir e manter informações de forma precisa."
 						},
 						{
 							"id": 4,
-							"ctx": "Conjunto de práticas de gerenciamento de TI"
+							"ctx": "Analisar vagamente as informações."
+						}
+					],
+					"answer_id": 3
+				},
+				{
+					"id": 2,
+					"question": "O Catálogo de Serviços tem dois aspectos:",
+					"options": [
+						{
+							"id": 1,
+							"ctx": "Catálogos de Serviços de Negócio e Catálogos de Serviços de Gestão."
+						},
+						{
+							"id": 2,
+							"ctx": "Catálogos de Serviços de Gerenciamento de TI e Catálogos de Serviços Negócio."
+						},
+						{
+							"id": 3,
+							"ctx": "Catálogo de Serviços Tecnológicos e Catálogo de Serviços Administrativos."
+						},
+						{
+							"id": 4,
+							"ctx": "Catálogos de Serviços de Negócio e Catálogo de Serviços Tecnológicos."
 						}
 					],
 					"answer_id": 4
 				},
 				{
-					"id": 2,
-					"question": "Qual o significado da  sigla ITIL?",
+					"id": 3,
+					"question": "Assinale a alternativa correta que define o Catálogo de Serviços de Negócio:",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Information Technology Infrastructure Library"
+							"ctx": "Contém detalhes de todos os serviços entregues ao cliente, junto com a relação das unidades e processos de negócio que usam os serviços de TI. Esta é a visão do cliente do Catálogo de Serviços."
 						},
 						{
 							"id": 2,
-							"ctx": "Information TI  Library"
+							"ctx": "Contém detalhes de todos os serviços entregues ao cliente, junto com a relação dos serviços de suporte, serviços compartilhados e ICs (Itens de Configuração) necessários para suportar o serviço para o negócio."
 						},
 						{
 							"id": 3,
-							"ctx": "Intelligent Technology Infrastructure Library"
+							"ctx": "Contém detalhes de todos os serviços entregues ao cliente, junto com a relação das unidades e processos de negócio que usam os serviços de TI. Esta é a visão do gestor do Catálogo de Serviços."
 						},
 						{
 							"id": 4,
-							"ctx": "Intelligent Technology Inside Library"
+							"ctx": "Contém detalhes de todos os serviços entregues ao cliente, junto com a relação dos serviços de suporte, serviços compartilhados e ICs (Itens de Configuração) necessários para suportar o serviço para o negócio, devendo apoiar o Catálogo de Serviços de Tecnologia e fazer parte da visão do cliente."
 						}
 					],
 					"answer_id": 1
 				},
 				{
-					"id": 3,
-					"question": "Quais os livros que compõem a biblioteca da versão 3 da ITIL?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Estratégia de marketing, Design de serviço e Transição financeira"
-						},
-						{
-							"id": 2,
-							"ctx": "Serviços melhorados e Serviços contínuos"
-						},
-						{
-							"id": 3,
-							"ctx": "Melhoria contínua de marketing"
-						},
-						{
-							"id": 4,
-							"ctx": "Estratégia de serviço,Design de serviço,Transição de serviço,Operação de serviço e Melhoria contínua de serviço"
-						}
-					],
-					"answer_id": 4
-				},
-				{
 					"id": 4,
-					"question": "Após a leitura do cenário, terminamos o quadrinho com a seguinte pergunta: “O que você sugere que seja feito inicialmente?” Considere que você é o gestor de TI na situação, qual a sua resposta?",
+					"question": "Qual o principal objetivo do Gerenciamento da Disponibilidade?",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Analisar o contexto da empresa no presente, reavaliando o papel da governança, da estrutura de TI (Frameworks e modelos adotados), do alinhamento com os objetivos estratégicos e o funcionamento dos serviços."
+							"ctx": "Conseguir um mapeamento simples e resumido dos  requisitos do negócio."
 						},
 						{
 							"id": 2,
-							"ctx": "Selecionar e estudar possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos. "
+							"ctx": "Conseguir um mapeamento claro dos requisitos do negócio."
 						},
 						{
 							"id": 3,
-							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico, a fim de manter o alinhamento entre os planos e permitir as devidas melhorias nos serviços prestados."
+							"ctx": "Manter todos os itens do projeto disponíveis para o uso."
 						},
 						{
 							"id": 4,
-							"ctx": "Selecionar uma equipe única especializada na construção de novos modelos de serviços baseados na estrutura já empregada pela empresa, mesmo que isso ocupe muito tempo e não permita a participação de partes interessadas nas mudanças."
+							"ctx": "Analisar todos os funcionários que estejam disponíveis no momento de realizar o projeto."
 						}
 					],
-					"answer_id": 1,
-					"tag": [
-						"context"
-					]
+					"answer_id": 2
 				},
 				{
 					"id": 5,
-					"question": "Em qual dos  livros que compõem a biblioteca da versão 3 da ITIL aborda as decisões estratégicas relacionadas aos serviços?",
+					"question": "Partindo do que vimos até então sobre os cenários, quais serviços poderiam ser listados no catálogo de serviços da GTI & CIA?",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Estratégia para decisão"
+							"ctx": "Service Desk, Gerência de Incidentes e Excelência Operacional"
 						},
 						{
 							"id": 2,
-							"ctx": "O poder da estratégia"
+							"ctx": "Segurança da Informação, Melhoria Contínua dos Processos e Aprendizado e Crescimento."
 						},
 						{
 							"id": 3,
-							"ctx": "Estratégia de Serviços"
+							"ctx": "Governança de TI, Gerenciamento de disponibilidade e Gerência de Problemas."
 						},
 						{
 							"id": 4,
-							"ctx": "Serviços com estratégia"
+							"ctx": "Gerência de Problemas, Gerência de Incidentes e Service Desk."
 						}
 					],
-					"answer_id": 3
+					"answer_id": 4,
+					"tag": [
+						"context"
+					]
 				}
 			]
 		},
@@ -912,129 +811,60 @@
 				"html": "<h2>MÓDULO 03 - DESIGN DE SERVIÇO</h2><p><br></p><h3>PARTE 03 - ENCERRAMENTO</h3><p><br></p><p><br></p><p>Veja só! Terminamos!</p><p><br></p><p>Vimos tantas coisas até aqui, aprendemos sobre o que é o ITIL e alguns dos seus fundamentos, além de explorarmos um pouco dois de seus livros, as Estratégias de Serviços e o Design de Serviços.</p><p><br></p><p>Esperamos que você tenha gostado de nosso percurso, sábio guerreiro.</p><p><br></p><p>Percorremos um longo caminho de aprendizado, então é hora de darmos adeus…</p><p><br></p><p>Até a próxima! </p><p><br></p>"
 			},
 			"context": {
-				"images": [
-					"/modules/fundamentals/comic-1.jpeg",
-					"/modules/fundamentals/comic-2.jpeg"
-				]
+				"images": ["/modules/design/comic-3.png"]
 			},
 			"questions": [
 				{
 					"id": 1,
-					"question": "O que é o ITIL?",
+					"question": "Conforme o que você aprendeu com a leitura do cenário, identifique mais um benefício provido pela implantação do ITIL na GTI & CIA.",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Uma metodologia"
+							"ctx": "O framework não permite o comprometimento de diferentes áreas envolvidas na implantação"
 						},
 						{
 							"id": 2,
-							"ctx": "Uma Ferramenta"
+							"ctx": "Os recursos humanos podem ser limitados, já que as boas práticas referem-se apenas aos sistemas informatizados."
 						},
 						{
 							"id": 3,
-							"ctx": "Um software"
+							"ctx": "A implantação do ITIL garantiu um maior desenvolvimento da Governança de TI, já que as boas práticas estão totalmente alinhadas ao framework COBIT."
 						},
 						{
 							"id": 4,
-							"ctx": "Conjunto de práticas de gerenciamento de TI"
+							"ctx": "Permitiu a referência uniforme para a comunicação interna, padronizando e identificando serviços"
 						}
 					],
-					"answer_id": 4
-				},
-				{
-					"id": 2,
-					"question": "Qual o significado da  sigla ITIL?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Information Technology Infrastructure Library"
-						},
-						{
-							"id": 2,
-							"ctx": "Information TI  Library"
-						},
-						{
-							"id": 3,
-							"ctx": "Intelligent Technology Infrastructure Library"
-						},
-						{
-							"id": 4,
-							"ctx": "Intelligent Technology Inside Library"
-						}
-					],
-					"answer_id": 1
-				},
-				{
-					"id": 3,
-					"question": "Quais os livros que compõem a biblioteca da versão 3 da ITIL?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Estratégia de marketing, Design de serviço e Transição financeira"
-						},
-						{
-							"id": 2,
-							"ctx": "Serviços melhorados e Serviços contínuos"
-						},
-						{
-							"id": 3,
-							"ctx": "Melhoria contínua de marketing"
-						},
-						{
-							"id": 4,
-							"ctx": "Estratégia de serviço,Design de serviço,Transição de serviço,Operação de serviço e Melhoria contínua de serviço"
-						}
-					],
-					"answer_id": 4
-				},
-				{
-					"id": 4,
-					"question": "Após a leitura do cenário, terminamos o quadrinho com a seguinte pergunta: “O que você sugere que seja feito inicialmente?” Considere que você é o gestor de TI na situação, qual a sua resposta?",
-					"options": [
-						{
-							"id": 1,
-							"ctx": "Analisar o contexto da empresa no presente, reavaliando o papel da governança, da estrutura de TI (Frameworks e modelos adotados), do alinhamento com os objetivos estratégicos e o funcionamento dos serviços."
-						},
-						{
-							"id": 2,
-							"ctx": "Selecionar e estudar possíveis metodologias, ferramentas e frameworks de serviços que possam auxiliar a empresa a alcançar seus objetivos. "
-						},
-						{
-							"id": 3,
-							"ctx": "Elaborar um planejamento que englobe os objetivos Estratégicos da Diretoria de TI  e os Objetivos do Departamento de Integração e Suporte Técnico, a fim de manter o alinhamento entre os planos e permitir as devidas melhorias nos serviços prestados."
-						},
-						{
-							"id": 4,
-							"ctx": "Selecionar uma equipe única especializada na construção de novos modelos de serviços baseados na estrutura já empregada pela empresa, mesmo que isso ocupe muito tempo e não permita a participação de partes interessadas nas mudanças."
-						}
-					],
-					"answer_id": 1,
+					"answer_id": 4,
 					"tag": [
 						"context"
 					]
 				},
 				{
-					"id": 5,
-					"question": "Em qual dos  livros que compõem a biblioteca da versão 3 da ITIL aborda as decisões estratégicas relacionadas aos serviços?",
+					"id": 2,
+					"question": "A partir do que foi observado nos cenários, identifique uma alternativa que NÃO  pode ser considerada uma lição aprendida durante a implantação do ITIL na GTI & CIA.",
 					"options": [
 						{
 							"id": 1,
-							"ctx": "Estratégia para decisão"
+							"ctx": "A nomeação formal dos gerentes é essencial para definir os responsáveis pelos serviços prestados pela empresa."
 						},
 						{
 							"id": 2,
-							"ctx": "O poder da estratégia"
+							"ctx": "A mudança pode ser demorada e exigir um grande esforço, principalmente quando agrega práticas importantes para garantir a qualidade dos serviços."
 						},
 						{
 							"id": 3,
-							"ctx": "Estratégia de Serviços"
+							"ctx": "Não é preciso garantir investimentos em capacitação dos envolvidos, já que não é especificamente necessário envolver colaboradores certificados com ITIL Foundations."
 						},
 						{
 							"id": 4,
-							"ctx": "Serviços com estratégia"
+							"ctx": "É preciso dedicação exclusiva da equipe de implantação, para monitorar e alinhar o desenvolvimento do ITIL na organização."
 						}
 					],
-					"answer_id": 3
+					"answer_id": 3,
+					"tag": [
+						"context"
+					]
 				}
 			]
 		}
