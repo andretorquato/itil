@@ -27,7 +27,7 @@ export const HomeComponent: NextPage = () => {
 
   useEffect(() => {
     const sessionData = getProgress();
-    // setShowIntroduction(sessionData?.completedIntroduction ? false : true);
+    setShowIntroduction(sessionData?.completedIntroduction ? false : true);
     setScore(sessionData?.score || 0);
     const newModules = database.modules.map((m) => {
       return {
@@ -61,12 +61,12 @@ export const HomeComponent: NextPage = () => {
     router.push(`/modules/${activeModule.slug}`);
   };
   const handleFinishIntroduction = () => {
-    // const data = localStorage.getItem(config.session);
-    // if (data) {
-    //   const sessionData = JSON.parse(data);
-    //   sessionData.completedIntroduction = true;
-    //   localStorage.setItem(config.session, JSON.stringify(sessionData));
-    // }
+    const data = localStorage.getItem(config.session);
+    if (data) {
+      const sessionData = JSON.parse(data);
+      sessionData.completedIntroduction = true;
+      localStorage.setItem(config.session, JSON.stringify(sessionData));
+    }
     setShowIntroduction(false);
   };
 

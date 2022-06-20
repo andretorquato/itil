@@ -31,6 +31,7 @@ const Questions: NextPage<QuestionProps> = ({
   const [indexActiveQuestion, setIndexActiveQuestion] = useState<number>(0);
   const [showContext, setShowContext] = useState<boolean>(false);
   const songEl = useRef<HTMLAudioElement>(null);
+  const songElSuccess = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     setActiveQuestion(module.questions[indexActiveQuestion]);
@@ -45,8 +46,6 @@ const Questions: NextPage<QuestionProps> = ({
   }, [isWrongAnswer]);
 
   const optionClass = (optionId: number) => {
-    console.log("excute");
-
     // show right answer
     if (!showActions && optionId === activeQuestion?.answer_id)
       return `${styles.option} ${styles.right}`;
@@ -73,7 +72,10 @@ const Questions: NextPage<QuestionProps> = ({
       setIsWrongAnswer(isWrongAnswer);
       songEl && songEl.current?.play();
     }
-    if (!isWrongAnswer) updateScore(activeQuestion);
+    if (!isWrongAnswer) {
+      updateScore(activeQuestion);
+      songElSuccess && songElSuccess.current?.play();
+    };
     setShowActions(false);
   };
 
@@ -196,6 +198,9 @@ const Questions: NextPage<QuestionProps> = ({
           )}
           <audio ref={songEl}>
             <source src="/audio/uepa.mp3" />
+          </audio>
+          <audio ref={songElSuccess}>
+            <source src="/audio/win.mp3" />
           </audio>
         </div>
       ) : (
