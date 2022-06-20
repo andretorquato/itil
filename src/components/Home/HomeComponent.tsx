@@ -27,7 +27,7 @@ export const HomeComponent: NextPage = () => {
 
   useEffect(() => {
     const sessionData = getProgress();
-    setShowIntroduction(sessionData?.completedIntroduction ? false : true);
+    // setShowIntroduction(sessionData?.completedIntroduction ? false : true);
     setScore(sessionData?.score || 0);
     const newModules = database.modules.map((m) => {
       return {
