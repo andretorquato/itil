@@ -61,12 +61,12 @@ export const HomeComponent: NextPage = () => {
     router.push(`/modules/${activeModule.slug}`);
   };
   const handleFinishIntroduction = () => {
-    const data = localStorage.getItem(config.session);
-    if (data) {
-      const sessionData = JSON.parse(data);
-      sessionData.completedIntroduction = true;
-      localStorage.setItem(config.session, JSON.stringify(sessionData));
-    }
+    // const data = localStorage.getItem(config.session);
+    // if (data) {
+    //   const sessionData = JSON.parse(data);
+    //   sessionData.completedIntroduction = true;
+    //   localStorage.setItem(config.session, JSON.stringify(sessionData));
+    // }
     setShowIntroduction(false);
   };
 
