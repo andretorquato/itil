@@ -1,21 +1,24 @@
 import { Button } from "@mui/material";
 import type { NextPage } from "next";
 
-import { ModuleProps } from "../../models/module";
+import { ModuleProps } from "../../../models/module";
 
-import styles from "./Introduction.module.scss";
+import styles from "./IntroductionStep.module.scss";
 
-interface IntroductionProps {
+interface IntroductionStepProps {
   module: ModuleProps;
   next: () => void;
 }
 
-const Introduction: NextPage<IntroductionProps> = ({ module, next }) => {
+const IntroductionStep: NextPage<IntroductionStepProps> = ({
+  module,
+  next,
+}) => {
   return (
     <>
       <div className={styles.container}>
         <div
-        className={styles.content}
+          className={styles.content}
           dangerouslySetInnerHTML={{ __html: module?.introduction?.html }}
         ></div>
         <Button variant="contained" onClick={next}>
@@ -26,4 +29,4 @@ const Introduction: NextPage<IntroductionProps> = ({ module, next }) => {
   );
 };
 
-export default Introduction;
+export default IntroductionStep;

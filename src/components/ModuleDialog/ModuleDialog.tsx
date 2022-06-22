@@ -1,12 +1,11 @@
-import * as React from "react";
+import { useState } from "react";
+
 import Button from "@mui/material/Button";
 import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 
 interface ModuleDialogProps {
   open: boolean;
@@ -19,9 +18,9 @@ export default function ModuleDialog({
   title,
   handleStart,
   handleClose,
-}: ModuleDialogProps) {  
-	const [fullWidth, setFullWidth] = React.useState(true);
-  const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('xs');
+}: ModuleDialogProps) {
+  const [fullWidth, setFullWidth] = useState(true);
+  const [maxWidth, setMaxWidth] = useState<DialogProps["maxWidth"]>("xs");
 
   return (
     <div>

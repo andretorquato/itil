@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { HomeComponent } from "../src/components/Home/HomeComponent";
+import { Modules } from "../src/components/Modules/Modules";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <HomeComponent />
+      <Modules />
     </>
   );
 };

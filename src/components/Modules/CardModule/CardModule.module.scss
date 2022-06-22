@@ -1,15 +1,4 @@
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	margin: auto;
-	padding: 1rem 0;
-	max-width: 90vw;
-}
-
-.boxModule {
+.module-box {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -22,11 +11,11 @@
 	.icon {
 		color: var(--primary);
 		padding: 1rem;
+
 		span {
-			font-size:2.5rem;
-		
+			font-size: 2.5rem;
 		}
-		
+
 	}
 
 	.description {
@@ -34,6 +23,7 @@
 		align-items: flex-start;
 		flex-direction: column;
 		height: 2.5rem;
+
 		p {
 			font-weight: 600;
 		}
@@ -53,12 +43,12 @@
 		.description p,
 		.icon span {
 			color: #F8A201;
-		} 
-	
+		}
+
 		&:hover,
 		&:active {
 			opacity: 0.9;
-			background:rgba(229, 229, 229, 0.5);
+			background: rgba(229, 229, 229, 0.5);
 		}
 	}
 }

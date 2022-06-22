@@ -2,20 +2,20 @@ import type { NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@mui/material";
 
-import Progress from "../Progress/Progress";
-import { ModuleProps, Question } from "../../../src/models/module";
-import styles from "./Question.module.scss";
-import Score from "../Score/Score";
-import Presentation from "../Presentation/Presentation";
+import { ModuleProps, Question } from "../../../models/module";
+import styles from "./QuestionsStep.module.scss";
+import Score from "../../Score/Score";
+import ContextStep from "../ContextStep/ContextStep";
+import Progress from "../../Progress/Progress";
 
-interface QuestionProps {
+interface QuestionsStepProps {
   module: ModuleProps;
   next: () => void;
   score: number;
   updateScore: (q: Question) => void;
 }
 
-const Questions: NextPage<QuestionProps> = ({
+const QuestionsStep: NextPage<QuestionsStepProps> = ({
   module,
   score,
   next,
@@ -75,7 +75,7 @@ const Questions: NextPage<QuestionProps> = ({
     if (!isWrongAnswer) {
       updateScore(activeQuestion);
       songElSuccess && songElSuccess.current?.play();
-    };
+    }
     setShowActions(false);
   };
 
@@ -204,7 +204,7 @@ const Questions: NextPage<QuestionProps> = ({
           </audio>
         </div>
       ) : (
-        <Presentation
+        <ContextStep
           module={module}
           next={handleChangeVisibleContext}
           buttonText={"Voltar para as questões"}
@@ -214,4 +214,4 @@ const Questions: NextPage<QuestionProps> = ({
   );
 };
 
-export default Questions;
+export default QuestionsStep;

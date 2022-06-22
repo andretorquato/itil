@@ -8,9 +8,9 @@ import styles from "../../styles/Story.module.scss";
 import database from "../../database.json";
 import config from "../../src/configuration/config.json";
 
-import Questions from "../../src/components/Questions/Questions";
-import Introduction from "../../src/components/Introduction/Introduction";
-import Presentation from "../../src/components/Presentation/Presentation";
+import Questions from "../../src/components/Quiz/QuestionsStep/QuestionsStep";
+import IntroductionStep from "../../src/components/Quiz/IntroductionStep/IntroductionStep";
+import ContextStep from "../../src/components/Quiz/ContextStep/ContextStep";
 import {
   getProgress,
   saveProgress,
@@ -30,15 +30,19 @@ const Story: NextPage = () => {
   useEffect(() => {
     const data = getProgress();
     let newModule = database.modules.find((m) => m.slug === moduleSlug);
-    if(newModule) {
-      const completedModule = data?.completedModules.find((cm: any) => cm.id === newModule?.id);
+    if (newModule) {
+      const completedModule = data?.completedModules.find(
+        (cm: any) => cm.id === newModule?.id
+      );
       newModule.questions = newModule.questions.map((q: any) => {
         return {
           ...q,
-          answered: completedModule?.questions?.find((cq: any) => cq.id === q.id)?.answered || false,
+          answered:
+            completedModule?.questions?.find((cq: any) => cq.id === q.id)
+              ?.answered || false,
         };
       });
-    };
+    }
     data && setScore(data?.score || 0);
     setModule({ ...newModule });
   }, [moduleSlug]);
@@ -71,22 +75,21 @@ const Story: NextPage = () => {
       setTimeout(() => {
         question.answered = true;
       }, 500);
-      
     }
   };
 
   return (
     <>
-    <Head>
-      <title>QUIZ ITIL - {module?.name}</title>
-    </Head>
+      <Head>
+        <title>QUIZ ITIL - {module?.name}</title>
+      </Head>
       <div className={styles.container}>
         {(() => {
           switch (currentStep) {
             case "introduction":
-              return <Introduction module={module} next={nextStep} />
+              return <IntroductionStep module={module} next={nextStep} />;
             case "contextualization":
-              return <Presentation module={module} next={nextStep} />
+              return <ContextStep module={module} next={nextStep} />;
             case "questions":
               return (
                 <Questions
@@ -95,7 +98,7 @@ const Story: NextPage = () => {
                   next={nextStep}
                   updateScore={updateScore}
                 />
-              )
+              );
           }
         })()}
       </div>

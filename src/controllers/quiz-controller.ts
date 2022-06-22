@@ -3,9 +3,7 @@ import { ModuleProps } from "../models/module";
 
 export const getProgress = () => {
 	const sessionData = localStorage.getItem(config.session);
-	if (sessionData) {
-		return JSON.parse(sessionData);
-	}
+	if (sessionData) return JSON.parse(sessionData);
 	return null;
 };
 
@@ -15,16 +13,14 @@ export const saveProgress = (module: ModuleProps, score: number) => {
 	const newQuestions = questions.map(q => ({ id: q.id, answered: q.answered }));
 	if (sessionData) {
 		let data = JSON.parse(sessionData);
-		const { completedIntroduction } = data;
 		let { completedModules } = data;
 		const newCompletedModules = [...completedModules];
 		const addedModule = completedModules.find((m: any) => m.id == id);
-		if (addedModule) 
+		if (addedModule)
 			addedModule.questions = newQuestions
-		else 
+		else
 			newCompletedModules.push({ id, name, slug, questions: newQuestions });
 		let newData = {
-			completedIntroduction,
 			score: score,
 			completedModules: newCompletedModules
 		};
@@ -34,7 +30,6 @@ export const saveProgress = (module: ModuleProps, score: number) => {
 	localStorage.setItem(
 		config.session,
 		JSON.stringify({
-			competedIntroduction: true,
 			score,
 			completedModules: [
 				{ id, name, slug, questions: newQuestions },
