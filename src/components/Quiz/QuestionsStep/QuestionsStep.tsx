@@ -50,6 +50,7 @@ const QuestionsStep: NextPage<QuestionsStepProps> = ({
     if (!showActions && optionId === activeQuestion?.answer_id)
       return `${styles.option} ${styles.right}`;
 
+    // show wrong answer 
     if (
       !showActions &&
       optionId === selectedAnswerID &&

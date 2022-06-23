@@ -21,11 +21,11 @@ const steps = ["introduction", "contextualization", "questions", "finish"];
 
 const Story: NextPage = () => {
   const [currentStep, setCurrentStep] = useState("introduction");
-  const [module, setModule]: any | null = useState(null);
+  const [activeModule, setActiveModule]: any | null = useState(null);
   const [score, setScore] = useState(0);
   const [moduleSlug, setModuleSlug] = useState("");
   const router = useRouter();
-  const { story } = router.query;
+  const { module } = router.query;
 
   useEffect(() => {
     const data = getProgress();
@@ -44,12 +44,12 @@ const Story: NextPage = () => {
       });
     }
     data && setScore(data?.score || 0);
-    setModule({ ...newModule });
+    setActiveModule({ ...newModule });
   }, [moduleSlug]);
 
   useEffect(() => {
-    if (story) setModuleSlug(story as string);
-  }, [story]);
+    if (module) setModuleSlug(module as string);
+  }, [module]);
 
   const changeStep = (step: string) => {
     setCurrentStep(step);
@@ -60,7 +60,7 @@ const Story: NextPage = () => {
     const isFinishSteps =
       steps[index + 1] !== undefined && steps[index + 1] == "finish";
     if (isFinishSteps) {
-      saveProgress(module, score);
+      saveProgress(activeModule, score);
       router.push("/");
     }
     if (index < steps.length - 1) {
@@ -69,7 +69,7 @@ const Story: NextPage = () => {
   };
 
   const updateScore = (activeQ: Question) => {
-    const question = module.questions.find((q: any) => q.id === activeQ.id);
+    const question = activeModule.questions.find((q: any) => q.id === activeQ.id);
     if (question && !question.answered) {
       setScore(score + config["default_xp"]);
       setTimeout(() => {
@@ -81,19 +81,19 @@ const Story: NextPage = () => {
   return (
     <>
       <Head>
-        <title>QUIZ ITIL - {module?.name}</title>
+        <title>QUIZ ITIL - {activeModule?.name}</title>
       </Head>
       <div className={styles.container}>
         {(() => {
           switch (currentStep) {
             case "introduction":
-              return <IntroductionStep module={module} next={nextStep} />;
+              return <IntroductionStep module={activeModule} next={nextStep} />;
             case "contextualization":
-              return <ContextStep module={module} next={nextStep} />;
+              return <ContextStep module={activeModule} next={nextStep} />;
             case "questions":
               return (
                 <Questions
-                  module={module}
+                  module={activeModule}
                   score={score}
                   next={nextStep}
                   updateScore={updateScore}
